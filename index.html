@@ -59,10 +59,41 @@
   </div>
 
   <!-- Main div -->
-  <div class="main">
+  <main class="main">
+    <nav class="top">
     <button id="sign-out">Sign Out</button>
     <button id="show-change-pw">Change Password</button>
-  </div>
+    </nav>
+    <section class="lower row">
+      <nav class="left col-xs-3">
+        <h3>Bikes</h3>
+        <ul>
+          <li>All Bikes</li>
+          <li><button id='show-create-form'>New Bike</button></li>
+          <li>Find Bike</li>
+        </ul>
+      </nav>
+      <section class="right col-xs-9">
+
+        <form id="create-bicycle-form">
+        <fieldset>
+            <legend class='heading'>Create New Bike</legend>
+          <input type="text" id="bicycle-make" name="bicycle[make]" placeholder="Make">
+          <input type="text" id="bicycle-model" name="bicycle[model]" placeholder="Model">
+          <input type="text" id="bicycle-color" name="bicycle[color]" placeholder="color">
+          <input type="text" id="serial-number" name="bicycle[serial-number]" placeholder="serial number">
+          <input type="text" id="bicycle-size" name="bicycle[size]" placeholder="size">
+          <input type="submit" name="submit" value="Create Bicycle">
+        </fieldset>
+      </form>
+
+        <div class="display-results">
+        <p>Everything will display here</p>
+      </div>
+      </section>
+    </section>
+
+  </main>
 
 
 </body>

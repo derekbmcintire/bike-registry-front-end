@@ -1,6 +1,14 @@
 $icon-font-path: '~bootstrap-sass/assets/fonts/bootstrap/';
 @import '~bootstrap-sass/assets/stylesheets/bootstrap';
 
+.left {
+  background-color: pink;
+}
+
+.lower {
+  border: 1px solid black;
+}
+
 .sign-in-up {
   border: 1px solid black;
   border-radius: 25px;

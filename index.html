@@ -1,25 +1,70 @@
 <!DOCTYPE html>
 <html>
-    <head>
-      <title>Example</title>
-      <meta name="viewport" content="width=device-width, initial-scale=1">
 
-      <!-- Do not add `link` tags-->
-      <link rel="shortcut icon" type="image/x-icon" href="favicon.ico">
+<head>
+  <title>Spoke Retriever</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
 
-      <!-- Do not add `script` tags-->
-      <script src="public/vendor.js" type="text/javascript" charset="utf-8" defer></script>
-      <script src="public/application.js" type="text/javascript" charset="utf-8" defer></script>
-    </head>
-    <body class="container-fluid">
-      <h1>Example</h1>
+  <!-- Do not add `link` tags-->
+  <link rel="shortcut icon" type="image/x-icon" href="favicon.ico">
 
-      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do
-      eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad
-      minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex
-      ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate
-      velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat
-      cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id
-      est laborum.</p>
-    </body>
+  <!-- Do not add `script` tags-->
+  <script src="public/vendor.js" type="text/javascript" charset="utf-8" defer></script>
+  <script src="public/application.js" type="text/javascript" charset="utf-8" defer></script>
+</head>
+
+<body class="container-fluid">
+
+  <!-- Title and Message -->
+  <h1>Spoke Retriever</h1>
+  <h4 id="message"></h4>
+
+  <!-- Sign in - up container -->
+  <div class="sign-in-up">
+    <!-- sign up form -->
+    <form id="sign-up">
+      <fieldset>
+        <legend>Sign up!</legend>
+        <input type="text" id="sign-up-email" name="credentials[email]" placeholder="Email">
+        <input type="text" id="sign-up-password" name="credentials[password]" placeholder="Password">
+        <input type="text" id="sign-up-password-confirm" name="credentials[password_confirmation]" placeholder="Password Confirmation">
+        <input type="submit" name="submit" value="Sign up!">
+      </fieldset>
+    </form>
+    <br />
+
+    <!-- sign in form -->
+    <form id="sign-in">
+      <fieldset>
+        <legend class='heading'>or Sign in!</legend>
+        <input type="text" id="sign-in-email" name="credentials[email]" placeholder="Email">
+        <input type="text" id="sign-in-password" name="credentials[password]" placeholder="Password">
+        <input type="submit" name="submit" value="Sign In!">
+      </fieldset>
+    </form>
+  </div>
+
+  <!-- change password container -->
+  <div id="change-pw-container">
+    <!-- change password form -->
+    <form id="change-password">
+      <fieldset>
+        <legend class='heading'>Change Password</legend>
+        <input type="text" name="passwords[old]" placeholder="Old Password">
+        <input type="text" name="passwords[new]" placeholder="New Password">
+        <input type="submit" name="submit" value="Change Password">
+      </fieldset>
+    </form>
+
+  </div>
+
+  <!-- Main div -->
+  <div class="main">
+    <button id="sign-out">Sign Out</button>
+    <button id="show-change-pw">Change Password</button>
+  </div>
+
+
+</body>
+
 </html>

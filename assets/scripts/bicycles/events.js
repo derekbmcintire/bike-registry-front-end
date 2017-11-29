@@ -7,6 +7,7 @@ const ui = require('./ui')
 // show the create bike form
 const showCreateBike = function () {
   $('#create-bicycle-form').show()
+  $('.display-results').html('')
 }
 
 // create bicycle callback function
@@ -18,10 +19,18 @@ const onCreateBicycle = function (event) {
     .catch(ui.createBicycleFailure)
 }
 
+// get all bicycles callback function
+const onGetBicycles = function () {
+  api.getBicycles()
+    .then(ui.getBicyclesSuccess)
+    .catch(ui.getBicyclesFailure)
+}
+
 // click handlers
 const addHandlers = function () {
   $('#show-create-form').on('click', showCreateBike)
   $('#create-bicycle-form').on('submit', onCreateBicycle)
+  $('#show-all-bikes').on('click', onGetBicycles)
 }
 
 module.exports = {

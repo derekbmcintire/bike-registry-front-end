@@ -14,7 +14,16 @@ const createBicycle = function (data) {
   })
 }
 
-module.exports = {
+// get all bicycles ajax request
+const getBicycles = function () {
+  return $.ajax({
+    url: config.apiOrigin + '/bicycles',
+    method: 'GET',
+    headers: 'Content-Type: application/json'
+  })
+}
 
-  createBicycle
+module.exports = {
+  createBicycle,
+  getBicycles
 }

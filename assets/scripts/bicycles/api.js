@@ -31,8 +31,20 @@ const findBicycle = function (data) {
   })
 }
 
+const deleteBicycle = function () {
+  console.log('hi, I am the API!')
+  return $.ajax({
+    url: config.apiOrigin + '/bicycles/' + store.updateId,
+    method: 'DELETE',
+    headers: {
+      Authorization: 'Token token=' + store.user.token
+    }
+  })
+}
+
 module.exports = {
   createBicycle,
   getBicycles,
-  findBicycle
+  findBicycle,
+  deleteBicycle
 }

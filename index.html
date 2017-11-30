@@ -26,8 +26,8 @@
       <fieldset>
         <legend>Sign up!</legend>
         <input type="text" id="sign-up-email" name="credentials[email]" placeholder="Email">
-        <input type="text" id="sign-up-password" name="credentials[password]" placeholder="Password">
-        <input type="text" id="sign-up-password-confirm" name="credentials[password_confirmation]" placeholder="Password Confirmation">
+        <input type="password" id="sign-up-password" name="credentials[password]" placeholder="Password">
+        <input type="password" id="sign-up-password-confirm" name="credentials[password_confirmation]" placeholder="Password Confirmation">
         <input type="submit" name="submit" value="Sign up!">
       </fieldset>
     </form>
@@ -38,7 +38,7 @@
       <fieldset>
         <legend class='heading'>or Sign in!</legend>
         <input type="text" id="sign-in-email" name="credentials[email]" placeholder="Email">
-        <input type="text" id="sign-in-password" name="credentials[password]" placeholder="Password">
+        <input type="password" id="sign-in-password" name="credentials[password]" placeholder="Password">
         <input type="submit" name="submit" value="Sign In!">
       </fieldset>
     </form>
@@ -50,8 +50,8 @@
     <form id="change-password">
       <fieldset>
         <legend class='heading'>Change Password</legend>
-        <input type="text" name="passwords[old]" placeholder="Old Password">
-        <input type="text" name="passwords[new]" placeholder="New Password">
+        <input id="old-password" type="password" name="passwords[old]" placeholder="Old Password">
+        <input id="new-password" type="password" name="passwords[new]" placeholder="New Password">
         <input type="submit" name="submit" value="Change Password">
       </fieldset>
     </form>

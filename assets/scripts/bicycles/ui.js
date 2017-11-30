@@ -1,5 +1,6 @@
 'use strict'
 const store = require('../store')
+const res = require('../result-events/events')
 const showBicyclesTemplate = require('../templates/bicycle-listing.handlebars')
 const showBicycleTemplate = require('../templates/find-bicycle.handlebars')
 
@@ -22,6 +23,7 @@ const getBicyclesSuccess = function (data) {
   $('#create-bicycle-form').hide()
   $('#find-a-bicycle-form').hide()
   $('.display-results').append(showBicyclesHtml)
+  res.remove()
 }
 
 // display message on get all bicycles failure

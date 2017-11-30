@@ -23,7 +23,16 @@ const getBicycles = function () {
   })
 }
 
+// get all bicycles ajax request
+const findBicycle = function (data) {
+  return $.ajax({
+    url: config.apiOrigin + '/bicycles/' + data.bicycle.id,
+    method: 'GET'
+  })
+}
+
 module.exports = {
   createBicycle,
-  getBicycles
+  getBicycles,
+  findBicycle
 }

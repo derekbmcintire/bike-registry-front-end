@@ -12,6 +12,7 @@ $(() => {
   $('.main').hide()
   $('#change-pw-container').hide()
   $('#create-bicycle-form').hide()
+  $('#find-a-bicycle-form').hide()
 })
 
 // use require with a reference to bundle the file and use it in this file

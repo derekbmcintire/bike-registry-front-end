@@ -19,7 +19,9 @@ const getBicycles = function () {
   return $.ajax({
     url: config.apiOrigin + '/bicycles',
     method: 'GET',
-    headers: 'Content-Type: application/json'
+    headers: {
+      Authorization: 'Token token=' + store.user.token
+    }
   })
 }
 

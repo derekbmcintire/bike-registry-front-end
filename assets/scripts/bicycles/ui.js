@@ -18,6 +18,7 @@ const createBicycleFailure = function () {
 const getBicyclesSuccess = function (data) {
   $('#message').text('Get bicycles success!')
   store.data = data
+  console.log(store.user)
   const showBicyclesHtml = showBicyclesTemplate({ bicycles: data.bicycles })
   $('.display-results').html('')
   $('#create-bicycle-form').hide()

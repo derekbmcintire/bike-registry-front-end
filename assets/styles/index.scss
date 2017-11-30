@@ -1,6 +1,11 @@
 $icon-font-path: '~bootstrap-sass/assets/fonts/bootstrap/';
 @import '~bootstrap-sass/assets/stylesheets/bootstrap';
 
+.bicycles {
+  border: 1px solid black;
+  margin: 5px;
+  padding: 2px;
+}
 .left {
   background-color: pink;
 }

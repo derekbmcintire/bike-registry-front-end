@@ -16,8 +16,8 @@
 <body class="container-fluid">
 
   <!-- Title and Message -->
-  <h1>Spoke Retriever</h1>
-  <h4 id="message"></h4>
+  <h1 class="title">Spoke Retriever</h1>
+  <h4 id="message" class="message"></h4>
 
   <!-- Sign in - up container -->
   <div class="sign-in-up">
@@ -72,11 +72,10 @@
       <!-- left nav -->
       <nav class="left col-xs-3">
         <h3>Bikes</h3>
-        <ul>
-          <li><button id='show-all-bikes'>All Bikes</button></li>
-          <li><button id='show-create-form'>New Bike</button></li>
-          <li><button id='show-find-form'>Find Bike</button></li>
-        </ul>
+          <button class="bike-nav" id='show-all-bikes'>All Bikes</button>
+          <button class="bike-nav" id='show-create-form'>New Bike</button>
+          <button class="bike-nav" id='show-find-form'>Find Bike</button>
+
       </nav>
 
       <!-- right display section -->
@@ -91,6 +90,7 @@
             <input type="text" id="bicycle-color" name="bicycle[color]" placeholder="color">
             <input type="text" id="serial-number" name="bicycle[serial_number]" placeholder="serial number">
             <input type="text" id="bicycle-size" name="bicycle[size]" placeholder="size">
+            <input type="text" id="bicycle-url" name="bicycle[url]" placeholder="URL">
             <input type="submit" name="submit" value="Create Bicycle">
           </fieldset>
         </form>
@@ -98,6 +98,7 @@
         <form id="update-bicycle-form">
           <fieldset>
             <legend class='heading'>Update Bike</legend>
+            <input type="text" id="update-url" name="bicycle[url]" placeholder="URL">
             <input type="text" id="update-make" name="bicycle[make]" placeholder="Make">
             <input type="text" id="update-model" name="bicycle[model]" placeholder="Model">
             <input type="text" id="update-color" name="bicycle[color]" placeholder="color">

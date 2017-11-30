@@ -1,18 +1,21 @@
 {{#each bicycles as |bicycle|}}
 
-<div class="bicycles" data-id="{{bicycle.id}}">
-  <div class="inner">
+<div class="bicycles row" data-id="{{bicycle.id}}">
+  <div class="show-left col-xs-4">
+    <img class="bike-img" src={{bicycle.url}}>
+  </div>
+  <div class="show-right col-xs-8">
     <ul>
-      <li>Make: {{bicycle.make}}</li>
-      <li>Model: {{bicycle.model}}</li>
-      <li>color: {{bicycle.color}}</li>
-      <li>serial number: {{bicycle.serial_number}}</li>
-      <li>size: {{bicycle.size}}</li>
+      <li><span class="attribute">Make:</span> {{bicycle.make}}</li>
+      <li><span class="attribute">Model:</span> {{bicycle.model}}</li>
+      <li><span class="attribute">color:</span> {{bicycle.color}}</li>
+      <li><span class="attribute">serial number:</span> {{bicycle.serial_number}}</li>
+      <li><span class="attribute">size:</span> {{bicycle.size}}</li>
     </ul>
   </div>
 
 {{#if bicycle.editable}}
-  <div class="inner">
+  <div>
     <button class="show-update-form">Update</button>
     <button class="remove">Remove</button>
   </div>

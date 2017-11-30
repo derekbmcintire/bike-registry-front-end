@@ -5,7 +5,8 @@ const showBicyclesTemplate = require('../templates/bicycle-listing.handlebars')
 const showBicycleTemplate = require('../templates/find-bicycle.handlebars')
 
 // display message on create bicycle success
-const createBicycleSuccess = function () {
+const createBicycleSuccess = function (data) {
+  console.log(data.bicycle)
   $('#message').text('Bicycle successfully created')
 }
 

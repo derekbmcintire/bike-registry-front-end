@@ -35,6 +35,9 @@ const onUpdateBicycle = function () {
 const showUpdateBicycle = function () {
   $('.show-update-form').on('click', () => {
     store.updateId = $(event.target).parent().parent().data('id')
+    $('#update-url').val(store.data.bicycles.find((element) => {
+      return element.id === store.updateId
+    }).url)
     $('#update-make').val(store.data.bicycles.find((element) => {
       return element.id === store.updateId
     }).make)

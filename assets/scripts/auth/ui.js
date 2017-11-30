@@ -3,7 +3,7 @@ const store = require('../store')
 
 // display message on sign up success
 const signUpSuccess = function (data) {
-  $('#message').text('You got lucky this time, punk!')
+  $('#message').text('You signed-up successfully!')
   $('#sign-up-email').val('')
   $('#sign-up-password').val('')
   $('#sign-up-password-confirm').val('')
@@ -11,7 +11,7 @@ const signUpSuccess = function (data) {
 
 // display message on sign up failure
 const signUpFailure = function () {
-  $('#message').text('Ya failed ya miserable sod!')
+  $('#message').text('Error on sign-up')
 }
 
 // display message on sign in success
@@ -23,6 +23,9 @@ const signInSuccess = function (data) {
   $('.sign-in-up').hide()
   $('#sign-in-email').val('')
   $('#sign-in-password').val('')
+  $('#sign-up-email').val('')
+  $('#sign-up-password').val('')
+  $('#sign-up-password-confirm').val('')
   $('.main').show()
 }
 

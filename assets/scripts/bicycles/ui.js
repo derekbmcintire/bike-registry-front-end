@@ -23,6 +23,7 @@ const getBicyclesSuccess = function (data) {
   $('.display-results').html('')
   $('#create-bicycle-form').hide()
   $('#find-a-bicycle-form').hide()
+  $('#update-bicycle-form').hide()
   $('.display-results').append(showBicyclesHtml)
   res.showUpdateBicycle()
   res.remove()

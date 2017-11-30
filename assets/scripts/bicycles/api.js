@@ -42,9 +42,22 @@ const deleteBicycle = function () {
   })
 }
 
+// update a single bicycle
+const updateBicycle = function (data) {
+  return $.ajax({
+    url: config.apiOrigin + '/bicycles/' + store.updateId,
+    method: 'PATCH',
+    headers: {
+      Authorization: 'Token token=' + store.user.token
+    },
+    data
+  })
+}
+
 module.exports = {
   createBicycle,
   getBicycles,
   findBicycle,
-  deleteBicycle
+  deleteBicycle,
+  updateBicycle
 }

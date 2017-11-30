@@ -10,10 +10,15 @@
       <li>size: {{bicycle.size}}</li>
     </ul>
   </div>
+
+  {{#if bicycle.editable}}
   <div class="inner">
-    <button class="update">Update</button>
+    <button class="show-update-form">Update</button>
     <button class="remove">Remove</button>
   </div>
+      {{/if}}
+
+
 </div>
 
 {{/each}}

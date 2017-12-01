@@ -53,8 +53,6 @@ const showUpdateBicycle = function () {
     $('#update-size').val(store.data.bicycles.find((element) => {
       return element.id === store.updateId
     }).size)
-    console.log(store.data)
-    console.log(store.updateId)
     $('.display-results').html('')
     $('#find-a-bicycle-form').hide()
     $('#create-bicycle-form').hide()

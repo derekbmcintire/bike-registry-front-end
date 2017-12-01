@@ -41,24 +41,36 @@ const getBicyclesFailure = function () {
   $('#message').text('Error getting bicycles')
 }
 
+// search all bicycles for search parameters
+// takes an array of search parameters and an array of all bicycles in db
 const matchBicycle = function (arr, bikes) {
+  // creates new array of normalized search parameters
   const search = arr.map((x) => x.toLowerCase())
   let result = []
+  // filter through the array of bicycles
   result = bikes.filter(bike => {
     const matches = []
+    // for each bicycle check the values it holds against the search parameters
     Object.values(bike).forEach(value => {
+      // normalize the current value to lower case
       const curVal = String(value).toLowerCase()
-      console.log(curVal)
+      // if the current value is present in the search parameters array
       if (search.indexOf(curVal) > -1) {
+        // push it into the matches array
         matches.push(curVal)
       }
     })
+    // if the matches array is the same length as the search parameters array
+    // then all search terms are present and the current bicycle object
+    // is a match, so it gets returned in the new filter array
     return matches.length === arr.length
   })
+  // if there are results in the result array, return success
   if (result.length > 0) {
     $('#message').text('Search success!')
     return result
   } else {
+    // else if there are no results, return no results found
     $('#message').text('No results found')
   }
 }
@@ -82,8 +94,6 @@ module.exports = {
   createBicycleFailure,
   getBicyclesSuccess,
   getBicyclesFailure,
-  // findBicycleSuccess,
-  // findBicycleFailure
   searchBicyclesSuccess,
   searchBicyclesFailure
 }

@@ -4,7 +4,6 @@ const store = require('../store')
 
 // create bicycle ajax request
 const createBicycle = function (data) {
-  console.log(data.bicycle)
   return $.ajax({
     url: config.apiOrigin + '/bicycles',
     method: 'POST',
@@ -26,6 +25,7 @@ const getBicycles = function () {
   })
 }
 
+// get all bicycles belonging to current user ajax request
 const getMyBicycles = function () {
   return $.ajax({
     url: config.apiOrigin + '/bicycles/mine',

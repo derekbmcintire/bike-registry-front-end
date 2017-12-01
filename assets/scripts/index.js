@@ -4,9 +4,11 @@ const setAPIOrigin = require('../../lib/set-api-origin')
 const config = require('./config')
 const authEvents = require('./auth/events')
 const bicycleEvents = require('./bicycles/events')
+const signInUp = require('./templates/sign-in-up.handlebars')
 
 $(() => {
   setAPIOrigin(location, config)
+  $('.sign-in-up').append(signInUp)
   authEvents.addHandlers()
   bicycleEvents.addHandlers()
   $('.main').hide()

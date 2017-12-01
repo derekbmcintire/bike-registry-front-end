@@ -6,7 +6,13 @@ const searchBicyclesTemplate = require('../templates/search-results.handlebars')
 
 // display message on create bicycle success
 const createBicycleSuccess = function (data) {
-  console.log(data.bicycle)
+  $('#bicycle-make').val('')
+  $('#bicycle-model').val('')
+  $('#bicycle-color').val('')
+  $('#serial-number').val('')
+  $('#bicycle-size').val('')
+  $('#bicycle-url').val('')
+  $('#create-bicycle-form').hide()
   $('#message').text('Bicycle successfully created')
 }
 
@@ -14,14 +20,6 @@ const createBicycleSuccess = function (data) {
 const createBicycleFailure = function () {
   $('#message').text('Error creating bicycle')
 }
-
-// const getMyBicyclesSuccess = function (data) {
-//
-// }
-//
-// const getMyBicyclesFailure = function () {
-//
-// }
 
 // display message on get all bicycles success
 const getBicyclesSuccess = function (data) {
@@ -47,10 +45,11 @@ const getBicyclesFailure = function () {
 // takes an array of strings that the user types into the  search bar
 // and an array of all the bikes that were returned from the index action
 const matchBicycle = function (arr, bikes) {
+  let result = []
   // loop through the array of search words
   for (let i = 0; i < arr.length; i++) {
     // filter the bikes array to only return objects that contain search words
-    return bikes.filter((bike) => {
+    result = bikes.filter((bike) => {
       // turn bicycle object values into an array of strings
       // map through that array and coerce each value to a string
       // normalize each value to lowercase
@@ -60,6 +59,12 @@ const matchBicycle = function (arr, bikes) {
         return String(value).toLowerCase()
       }).indexOf(arr[i].toLowerCase()) > -1
     })
+  }
+  if (result.length > 0) {
+    $('#message').text('Search success!')
+    return result
+  } else {
+    $('#message').text('No results found')
   }
 }
 

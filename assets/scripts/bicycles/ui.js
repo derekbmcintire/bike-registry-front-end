@@ -15,16 +15,24 @@ const createBicycleFailure = function () {
   $('#message').text('Error creating bicycle')
 }
 
+// const getMyBicyclesSuccess = function (data) {
+//
+// }
+//
+// const getMyBicyclesFailure = function () {
+//
+// }
+
 // display message on get all bicycles success
 const getBicyclesSuccess = function (data) {
   $('#message').text('Get bicycles success!')
   store.data = data
-  console.log(store.user)
   const showBicyclesHtml = showBicyclesTemplate({ bicycles: data.bicycles })
   $('.display-results').html('')
   $('#create-bicycle-form').hide()
   $('#find-a-bicycle-form').hide()
   $('#update-bicycle-form').hide()
+  $('#bike-search').val('')
   $('.display-results').append(showBicyclesHtml)
   res.showUpdateBicycle()
   res.remove()
@@ -35,46 +43,34 @@ const getBicyclesFailure = function () {
   $('#message').text('Error getting bicycles')
 }
 
-// display message on get all bicycles success
-// const findBicycleSuccess = function (data) {
-//   $('#message').text('Found bicycle success!')
-//   store.data = data
-//   const showBicycleHtml = showBicycleTemplate({ bicycle: data.bicycle })
-//   $('.display-results').append(showBicycleHtml)
-//   $('#find-a-bicycle-form').hide()
-// }
-
-// display message on get all bicycles failure
-// const findBicycleFailure = function () {
-//   $('#message').text('Error finding bicycle')
-// }
-
-const matchBicycle = function (search, result) {
-  // const attrs = [search.make, search.model, search.color, search.serial_number, search.size]
-  const matches = []
-  for (let i = 0; i < result.length; i++) {
-    if (result[i].make === search.make) {
-      matches.push(result[i])
-    } else if (result[i].model === search.model) {
-      matches.push(result[i])
-    } else if (result[i].color === search.color) {
-      matches.push(result[i])
-    } else if (result[i].serial_number === search.serial_number) {
-      matches.push(result[i])
-    } else if (result[i].size === search.size) {
-      matches.push(result[i])
-    }
+// finds search results
+// takes an array of strings that the user types into the  search bar
+// and an array of all the bikes that were returned from the index action
+const matchBicycle = function (arr, bikes) {
+  // loop through the array of search words
+  for (let i = 0; i < arr.length; i++) {
+    // filter the bikes array to only return objects that contain search words
+    return bikes.filter((bike) => {
+      // turn bicycle object values into an array of strings
+      // map through that array and coerce each value to a string
+      // normalize each value to lowercase
+      // check the array for the current search word
+      // if it exists, return the whole object
+      return Object.values(bike).map((value) => {
+        return String(value).toLowerCase()
+      }).indexOf(arr[i].toLowerCase()) > -1
+    })
   }
-  return matches
 }
 
+// display search results
 const searchBicyclesSuccess = function (data) {
   $('.display-results').html('')
-  const showBicyclesHtml = searchBicyclesTemplate(matchBicycle(store.targetData.bicycle, data.bicycles))
+  const showBicyclesHtml = searchBicyclesTemplate(matchBicycle(store.targetData, data.bicycles))
   $('.display-results').append(showBicyclesHtml)
-  console.log(matchBicycle(store.targetData.bicycle, data.bicycles))
 }
 
+// display message on search failure
 const searchBicyclesFailure = function () {
   $('#message').text('Error finding bicycle')
 }

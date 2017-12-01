@@ -26,13 +26,15 @@ const getBicycles = function () {
   })
 }
 
-// // get all bicycles ajax request
-// const findBicycle = function (data) {
-//   return $.ajax({
-//     url: config.apiOrigin + '/bicycles/' + data.bicycle.id,
-//     method: 'GET'
-//   })
-// }
+const getMyBicycles = function () {
+  return $.ajax({
+    url: config.apiOrigin + '/bicycles/mine',
+    method: 'GET',
+    headers: {
+      Authorization: 'Token token=' + store.user.token
+    }
+  })
+}
 
 // delete a bicycle ajax request
 const deleteBicycle = function () {
@@ -60,7 +62,7 @@ const updateBicycle = function (data) {
 module.exports = {
   createBicycle,
   getBicycles,
-  // findBicycle,
   deleteBicycle,
-  updateBicycle
+  updateBicycle,
+  getMyBicycles
 }

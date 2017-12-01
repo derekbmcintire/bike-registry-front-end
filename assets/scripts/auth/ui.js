@@ -38,6 +38,7 @@ const signInFailure = function () {
 // hide main div and show sign-in/up form
 const signOutSuccess = function () {
   $('#message').text('You have signed out successfully')
+  $('.display-results').html('')
   $('.main').hide()
   $('.sign-in-up').show()
 }

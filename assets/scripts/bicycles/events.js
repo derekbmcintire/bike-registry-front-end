@@ -10,6 +10,7 @@ const showCreateBicycle = function () {
   $('#create-bicycle-form').show()
   $('#update-bicycle-form').hide()
   $('#find-a-bicycle-form').hide()
+  $('#bike-search').val('')
   $('.display-results').html('')
 }
 
@@ -20,6 +21,13 @@ const onCreateBicycle = function (event) {
   api.createBicycle(data)
     .then(ui.createBicycleSuccess)
     .catch(ui.createBicycleFailure)
+}
+
+// get all my bicycles
+const onGetMyBicycles = function () {
+  api.getMyBicycles()
+    .then(ui.getBicyclesSuccess)
+    .catch(ui.getBicyclesFailure)
 }
 
 // get all bicycles callback function
@@ -36,21 +44,11 @@ const showFindBicycle = function () {
   $('.display-results').html('')
   $('#find-a-bicycle-form').show()
 }
-//
-// // create bicycle callback function
-// const onFindBicycle = function (event) {
-//   event.preventDefault()
-//   const data = getFormFields(event.target)
-//   api.findBicycle(data)
-//     .then(ui.findBicycleSuccess)
-//     .catch(ui.findBicycleFailure)
-// }
 
 // search bicycles callback function
 const onSearchBicycles = function (event) {
   event.preventDefault()
-  store.targetData = getFormFields(event.target)
-  console.log('in events ' + store.targetData.bicycle.make)
+  store.targetData = $('#bike-search').val().split(' ')
   api.getBicycles(store.targetData)
     .then(ui.searchBicyclesSuccess)
     .catch(ui.searchBicyclesFailure)
@@ -58,6 +56,7 @@ const onSearchBicycles = function (event) {
 
 // click handlers
 const addHandlers = function () {
+  $('#show-my-bikes').on('click', onGetMyBicycles)
   $('#show-create-form').on('click', showCreateBicycle)
   $('#create-bicycle-form').on('submit', onCreateBicycle)
   $('#show-all-bikes').on('click', onGetBicycles)

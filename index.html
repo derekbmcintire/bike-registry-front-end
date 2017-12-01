@@ -51,6 +51,7 @@
       <!-- left nav -->
       <nav class="left col-xs-3">
         <h3>Bikes</h3>
+          <button class="bike-nav" id="show-my-bikes">My Bikes</button>
           <button class="bike-nav" id='show-all-bikes'>All Bikes</button>
           <button class="bike-nav" id='show-create-form'>New Bike</button>
           <button class="bike-nav" id='show-find-form'>Search Bikes</button>
@@ -91,18 +92,9 @@
         <form id="find-a-bicycle-form">
           <fieldset>
             <legend class='heading'>Search Bicycles</legend>
-            <input type="text" id="search-make" name="bicycle[make]" placeholder="Make">
-            <input type="text" id="search-model" name="bicycle[model]" placeholder="Model">
-            <input type="text" id="search-color" name="bicycle[color]" placeholder="color">
-            <input type="text" id="search-number" name="bicycle[serial_number]" placeholder="serial number">
-            <input type="text" id="search-size" name="bicycle[size]" placeholder="size">
+            <input type="text" id="bike-search" placeholder="Your search here...">
             <input type="submit" name="submit" value="Search Bicycles">
           </fieldset>
-          <!-- <fieldset>
-            <legend class='heading'>Fid a Bike by ID</legend>
-            <input type="text" id="bicycle-id" name="bicycle[id]" placeholder="Id">
-            <input type="submit" name="submit" value="Find Bicycle">
-          </fieldset> -->
         </form>
 
         <!-- results div -->

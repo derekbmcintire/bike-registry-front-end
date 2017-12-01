@@ -1,0 +1,26 @@
+{{#each this}}
+
+<div class="bicycles row" data-id="{{this.id}}">
+  <div class="show-left col-xs-4">
+    <img class="bike-img" src={{this.url}}>
+  </div>
+  <div class="show-right col-xs-8">
+    <ul>
+      <li><span class="attribute">Make:</span> {{this.make}}</li>
+      <li><span class="attribute">Model:</span> {{this.model}}</li>
+      <li><span class="attribute">color:</span> {{this.color}}</li>
+      <li><span class="attribute">serial number:</span> {{this.serial_number}}</li>
+      <li><span class="attribute">size:</span> {{this.size}}</li>
+    </ul>
+  </div>
+
+{{#if this.editable}}
+  <div>
+    <button class="show-update-form">Update</button>
+    <button class="remove">Remove</button>
+  </div>
+{{/if}}
+
+</div>
+
+{{/each}}

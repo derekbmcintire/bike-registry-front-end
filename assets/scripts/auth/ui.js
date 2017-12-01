@@ -3,7 +3,7 @@ const store = require('../store')
 
 // display message on sign up success
 const signUpSuccess = function (data) {
-  $('#message').text('You signed-up successfully!')
+  $('#sign-message').text('You signed-up successfully!')
   $('#sign-up-email').val('')
   $('#sign-up-password').val('')
   $('#sign-up-password-confirm').val('')
@@ -11,7 +11,7 @@ const signUpSuccess = function (data) {
 
 // display message on sign up failure
 const signUpFailure = function () {
-  $('#message').text('Error on sign-up')
+  $('#sign-message').text('Error on sign-up')
 }
 
 // display message on sign in success
@@ -31,14 +31,36 @@ const signInSuccess = function (data) {
 
 // display message on sign in failure
 const signInFailure = function () {
-  $('#message').text('Error on sign in')
+  $('#sign-message').text('Error on sign in')
+}
+
+// clear all forms and results
+const clearAll = function () {
+  $('#bicycle-make').val('')
+  $('#bicycle-model').val('')
+  $('#bicycle-color').val('')
+  $('#serial-number').val('')
+  $('#bicycle-size').val('')
+  $('#bicycle-url').val('')
+  $('#update-make').val('')
+  $('#update-model').val('')
+  $('#update-color').val('')
+  $('#update-number').val('')
+  $('#update-size').val('')
+  $('#update-url').val('')
+  $('#create-bicycle-form').hide()
+  $('.display-results').html('')
+  $('#create-bicycle-form').hide()
+  $('#find-a-bicycle-form').hide()
+  $('#update-bicycle-form').hide()
+  $('#bike-search').val('')
 }
 
 // display message on sign out success
 // hide main div and show sign-in/up form
 const signOutSuccess = function () {
   $('#message').text('You have signed out successfully')
-  $('.display-results').html('')
+  clearAll()
   $('.main').hide()
   $('.sign-in-up').show()
 }

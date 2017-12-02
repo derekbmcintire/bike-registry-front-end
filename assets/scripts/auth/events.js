@@ -33,6 +33,10 @@ const onSignOut = function () {
 const showChangePassword = function () {
   $('#change-pw-container').show()
   $('.main').hide()
+  $('#abort-change-pw').on('click', () => {
+    $('#change-pw-container').hide()
+    $('.main').show()
+  })
 }
 
 // change password callback function

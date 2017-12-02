@@ -14,7 +14,7 @@ $(() => {
   $('.main').hide()
   $('#change-pw-container').hide()
   $('#create-bicycle-form').hide()
-  $('#search-form').hide()
+  // $('#search-form').hide()
   $('#update-bicycle-form').hide()
 })
 

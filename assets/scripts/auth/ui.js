@@ -19,7 +19,8 @@ const signUpFailure = function () {
 // hide sign in form and show main div
 const signInSuccess = function (data) {
   store.user = data.user
-  $('#message').text('Signed in successfully as ' + store.user.email)
+  $('#display-email').text(store.user.email)
+  $('#message').text('Signed in successfull')
   $('.sign-in-up').hide()
   $('#sign-in-email').val('')
   $('#sign-in-password').val('')
@@ -94,5 +95,6 @@ module.exports = {
   signOutSuccess,
   signOutFailure,
   changePasswordSuccess,
-  changePasswordFailure
+  changePasswordFailure,
+  clearAll
 }

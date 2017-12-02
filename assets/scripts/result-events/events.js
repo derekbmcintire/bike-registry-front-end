@@ -4,6 +4,7 @@ const getFormFields = require(`../../../lib/get-form-fields`)
 const api = require('../bicycles/api')
 const store = require('../store')
 const ui = require('./ui')
+const authUi = require('../auth/ui')
 
 // removes a bicycle from the view
 const remove = function () {
@@ -34,6 +35,7 @@ const onUpdateBicycle = function () {
 // show the update bike form
 const showUpdateBicycle = function () {
   $('.show-update-form').on('click', () => {
+    authUi.clearAll()
     store.updateId = $(event.target).parent().parent().data('id')
     $('#update-url').val(store.data.bicycles.find((element) => {
       return element.id === store.updateId
@@ -53,9 +55,6 @@ const showUpdateBicycle = function () {
     $('#update-size').val(store.data.bicycles.find((element) => {
       return element.id === store.updateId
     }).size)
-    $('.display-results').html('')
-    $('#find-a-bicycle-form').hide()
-    $('#create-bicycle-form').hide()
     $('#update-bicycle-form').show()
     $('#update-bicycle-form').on('submit', onUpdateBicycle)
   })

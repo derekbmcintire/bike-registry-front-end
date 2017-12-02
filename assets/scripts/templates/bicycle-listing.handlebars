@@ -4,7 +4,7 @@
   <div class="show-left col-xs-4">
     <img class="bike-img" src={{bicycle.url}}>
   </div>
-  <div class="show-right col-xs-8">
+  <div class="show-right col-xs-5">
     <ul>
       <li><span class="attribute">Make:</span> {{bicycle.make}}</li>
       <li><span class="attribute">Model:</span> {{bicycle.model}}</li>
@@ -15,7 +15,7 @@
   </div>
 
 {{#if bicycle.editable}}
-  <div>
+  <div class="col-xs-3">
     <button class="show-update-form">Update</button>
     <button class="remove">Remove</button>
   </div>

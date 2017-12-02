@@ -3,16 +3,11 @@ const store = require('../store')
 const res = require('../result-events/events')
 const showBicyclesTemplate = require('../templates/bicycle-listing.handlebars')
 const searchBicyclesTemplate = require('../templates/search-results.handlebars')
+const authUi = require('../auth/ui')
 
 // display message on create bicycle success
 const createBicycleSuccess = function (data) {
-  $('#bicycle-make').val('')
-  $('#bicycle-model').val('')
-  $('#bicycle-color').val('')
-  $('#serial-number').val('')
-  $('#bicycle-size').val('')
-  $('#bicycle-url').val('')
-  $('#create-bicycle-form').hide()
+  authUi.clearAll()
   $('#message').text('Bicycle successfully created')
 }
 
@@ -26,11 +21,7 @@ const getBicyclesSuccess = function (data) {
   $('#message').text('Get bicycles success!')
   store.data = data
   const showBicyclesHtml = showBicyclesTemplate({ bicycles: data.bicycles })
-  $('.display-results').html('')
-  $('#create-bicycle-form').hide()
-  $('#find-a-bicycle-form').hide()
-  $('#update-bicycle-form').hide()
-  $('#bike-search').val('')
+  authUi.clearAll()
   $('.display-results').append(showBicyclesHtml)
   res.showUpdateBicycle()
   res.remove()
@@ -77,7 +68,7 @@ const matchBicycle = function (arr, bikes) {
 
 // display search results
 const searchBicyclesSuccess = function (data) {
-  $('.display-results').html('')
+  authUi.clearAll()
   const showBicyclesHtml = searchBicyclesTemplate(matchBicycle(store.targetData, data.bicycles))
   $('.display-results').append(showBicyclesHtml)
   res.showUpdateBicycle()

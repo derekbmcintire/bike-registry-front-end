@@ -1,8 +1,16 @@
 $icon-font-path: '~bootstrap-sass/assets/fonts/bootstrap/';
 @import '~bootstrap-sass/assets/stylesheets/bootstrap';
+@import url('https://fonts.googleapis.com/css?family=Architects+Daughter');
+@import url('https://fonts.googleapis.com/css?family=Barlow+Semi+Condensed');
 
 body {
   background-color: #C1E1A6;
+  font-family: 'Barlow Semi Condensed', sans-serif;
+}
+
+h1 {
+  font-family: 'Architects Daughter', sans-serif;
+  font-weight: bold;
 }
 
 button {
@@ -48,11 +56,17 @@ ul {
 
 .main {
   margin: 0 auto;
-  min-width: 625px;
+  min-width: 645px;
+  max-width: 1000px;
   width: 80%;
 }
 .message {
   text-align: center;
+}
+
+.right {
+  max-height: 530px;
+  overflow: auto;
 }
 
 .show-left {
@@ -66,8 +80,6 @@ ul {
 }
 
 .sign-in-up {
-  border: 3px solid #118C4E;
-  border-radius: 8px;
   margin: 0 auto;
   padding: 40px;
   text-align: center;

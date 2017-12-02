@@ -10,7 +10,7 @@ $(() => {
   setAPIOrigin(location, config)
   $('.sign-in-up').append(signInUp)
   $('#sign-in-btn').on('click', () => {
-    $('.sign-in-up').append("<img src='http://www.netanimations.net/large%20gears.gif' class='loader'>")
+    $('.sign-in-up').append("<img src='http://www.netanimations.net/large%20gears.gif' class='loader'> <p>Loading...</p>")
   })
   authEvents.addHandlers()
   bicycleEvents.addHandlers()

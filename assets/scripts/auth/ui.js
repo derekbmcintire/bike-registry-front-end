@@ -45,7 +45,6 @@ const clearUpdateBicycle = function () {
 const clearAll = function () {
   clearCreateBicycle()
   clearUpdateBicycle()
-  $('#search-form').hide()
   $('.display-results').html('')
   $('#bike-search').val('')
 }

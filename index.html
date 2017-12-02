@@ -34,7 +34,7 @@
         <input type="submit" name="submit" value="Change Password">
       </fieldset>
     </form>
-
+    <button id="abort-change-pw">Go back</button>
   </div>
 
   <!-- main div -->
@@ -42,6 +42,12 @@
     <!-- top nav -->
     <nav class="top">
       <h4 id="display-email"></h4>
+      <!-- find a bicycle by id form -->
+      <form id="search-form" class="search-form">
+        <fieldset>
+          <input type="text" id="bike-search" placeholder="Search">
+        </fieldset>
+      </form>
       <button id="sign-out">Sign Out</button>
       <button id="show-change-pw">Change Password</button>
     </nav>
@@ -55,16 +61,6 @@
           <button class="bike-nav" id="show-my-bikes">My Bikes</button>
           <button class="bike-nav" id='show-all-bikes'>All Bikes</button>
           <button class="bike-nav" id='show-create-form'>New Bike</button>
-          <button class="bike-nav" id='show-find-form'>Search Bikes</button>
-
-          <!-- find a bicycle by id form -->
-          <form id="search-form">
-            <fieldset>
-              <legend class='heading'>Search Bicycles</legend>
-              <input type="text" id="bike-search" placeholder="Your search here...">
-              <input type="submit" name="submit" value="Search Bicycles">
-            </fieldset>
-          </form>
       </nav>
 
       <!-- right display section -->

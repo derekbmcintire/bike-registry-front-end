@@ -3,6 +3,10 @@ $icon-font-path: '~bootstrap-sass/assets/fonts/bootstrap/';
 @import url('https://fonts.googleapis.com/css?family=Architects+Daughter');
 @import url('https://fonts.googleapis.com/css?family=Barlow+Semi+Condensed');
 
+.search-form {
+  display: inline-block;
+}
+
 body {
   background-color: #C1E1A6;
   font-family: 'Barlow Semi Condensed', sans-serif;

@@ -34,6 +34,9 @@ const showChangePassword = function () {
   $('#change-pw-container').show()
   $('.main').hide()
   $('#abort-change-pw').on('click', () => {
+    $('#message-top').text('')
+    $('#old-password').val('')
+    $('#new-password').val('')
     $('#change-pw-container').hide()
     $('.main').show()
   })

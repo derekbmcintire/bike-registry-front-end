@@ -9,6 +9,7 @@ const authUi = require('../auth/ui')
 // show the create bike form
 const showCreateBicycle = function () {
   authUi.clearAll()
+  $('#message').text('')
   $('#create-bicycle-form').show()
 }
 

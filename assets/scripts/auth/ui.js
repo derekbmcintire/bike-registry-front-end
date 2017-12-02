@@ -66,7 +66,8 @@ const signUpFailure = function () {
 const signInSuccess = function (data) {
   store.user = data.user
   $('#display-email').text(store.user.email)
-  $('#message').text('Signed in successfull')
+  $('#message-top').text('')
+  $('#message').text('You have signed in successfully')
   clearSignIn()
 }
 
@@ -93,6 +94,7 @@ const signOutFailure = function () {
 // hide change password form
 // show main div
 const changePasswordSuccess = function (data) {
+  $('#message-top').text('')
   $('#message').text('Changed password successfully')
   $('#change-pw-container').hide()
   $('#old-password').val('')

@@ -8,17 +8,17 @@ const authUi = require('../auth/ui')
 // display message on create bicycle success
 const createBicycleSuccess = function (data) {
   authUi.clearAll()
-  $('#message').text('Bicycle successfully created')
+  $('#message').text('Bike successfully created')
 }
 
 // display message on create bicycle failure
 const createBicycleFailure = function () {
-  $('#message').text('Error creating bicycle')
+  $('#message').text('Error creating bike')
 }
 
 // display message on get all bicycles success
 const getBicyclesSuccess = function (data) {
-  $('#message').text('Get bicycles success!')
+  $('#message').text('Showing results')
   store.data = data
   const showBicyclesHtml = showBicyclesTemplate({ bicycles: data.bicycles })
   authUi.clearAll()
@@ -29,7 +29,7 @@ const getBicyclesSuccess = function (data) {
 
 // display message on get all bicycles failure
 const getBicyclesFailure = function () {
-  $('#message').text('Error getting bicycles')
+  $('#message').text('Error getting bike')
 }
 
 // search all bicycles for search parameters
@@ -79,7 +79,7 @@ const searchBicyclesSuccess = function (data) {
 
 // display message on search failure
 const searchBicyclesFailure = function () {
-  $('#message').text('Error finding bicycle')
+  $('#message').text('Search error')
 }
 
 module.exports = {

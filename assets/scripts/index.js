@@ -9,9 +9,7 @@ const signInUp = require('./templates/sign-in-up.handlebars')
 $(() => {
   setAPIOrigin(location, config)
   $('.sign-in-up').append(signInUp)
-  $('#sign-in-btn').on('click', () => {
-    $('.sign-in-up').append("<img src='http://www.netanimations.net/large%20gears.gif' class='loader'> <p>Loading...</p>")
-  })
+  $('#sign-in-btn').on('click', authEvents.showLoader)
   authEvents.addHandlers()
   bicycleEvents.addHandlers()
   $('.main').hide()

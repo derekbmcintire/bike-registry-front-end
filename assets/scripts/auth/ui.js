@@ -1,12 +1,59 @@
 'use strict'
 const store = require('../store')
 
-// display message on sign up success
-const signUpSuccess = function (data) {
-  $('#sign-message').text('You signed-up successfully!')
+// clear sign up forms
+const clearSignUp = function () {
   $('#sign-up-email').val('')
   $('#sign-up-password').val('')
   $('#sign-up-password-confirm').val('')
+}
+
+// clear sign in fields, hide sign in/up forms and show main div
+const clearSignIn = function () {
+  $('.sign-in-up').hide()
+  $('#sign-in-email').val('')
+  $('#sign-in-password').val('')
+  $('#sign-up-email').val('')
+  $('#sign-up-password').val('')
+  $('#sign-up-password-confirm').val('')
+  $('.main').show()
+}
+
+// clear create bicycle fields and forms
+const clearCreateBicycle = function () {
+  $('#bicycle-make').val('')
+  $('#bicycle-model').val('')
+  $('#bicycle-color').val('')
+  $('#serial-number').val('')
+  $('#bicycle-size').val('')
+  $('#bicycle-url').val('')
+  $('#create-bicycle-form').hide()
+}
+
+// clear update bicycle fields and forms
+const clearUpdateBicycle = function () {
+  $('#update-make').val('')
+  $('#update-model').val('')
+  $('#update-color').val('')
+  $('#update-number').val('')
+  $('#update-size').val('')
+  $('#update-url').val('')
+  $('#update-bicycle-form').hide()
+}
+
+// clear all forms and results
+const clearAll = function () {
+  clearCreateBicycle()
+  clearUpdateBicycle()
+  $('#search-form').hide()
+  $('.display-results').html('')
+  $('#bike-search').val('')
+}
+
+// display message on sign up success
+const signUpSuccess = function (data) {
+  $('#sign-message').text('You signed-up successfully!')
+  clearSignUp()
 }
 
 // display message on sign up failure
@@ -21,40 +68,12 @@ const signInSuccess = function (data) {
   store.user = data.user
   $('#display-email').text(store.user.email)
   $('#message').text('Signed in successfull')
-  $('.sign-in-up').hide()
-  $('#sign-in-email').val('')
-  $('#sign-in-password').val('')
-  $('#sign-up-email').val('')
-  $('#sign-up-password').val('')
-  $('#sign-up-password-confirm').val('')
-  $('.main').show()
+  clearSignIn()
 }
 
 // display message on sign in failure
 const signInFailure = function () {
   $('#sign-message').text('Error on sign in')
-}
-
-// clear all forms and results
-const clearAll = function () {
-  $('#bicycle-make').val('')
-  $('#bicycle-model').val('')
-  $('#bicycle-color').val('')
-  $('#serial-number').val('')
-  $('#bicycle-size').val('')
-  $('#bicycle-url').val('')
-  $('#update-make').val('')
-  $('#update-model').val('')
-  $('#update-color').val('')
-  $('#update-number').val('')
-  $('#update-size').val('')
-  $('#update-url').val('')
-  $('#create-bicycle-form').hide()
-  $('.display-results').html('')
-  $('#create-bicycle-form').hide()
-  $('#find-a-bicycle-form').hide()
-  $('#update-bicycle-form').hide()
-  $('#bike-search').val('')
 }
 
 // display message on sign out success

@@ -57,6 +57,14 @@
           <button class="bike-nav" id='show-create-form'>New Bike</button>
           <button class="bike-nav" id='show-find-form'>Search Bikes</button>
 
+          <!-- find a bicycle by id form -->
+          <form id="search-form">
+            <fieldset>
+              <legend class='heading'>Search Bicycles</legend>
+              <input type="text" id="bike-search" placeholder="Your search here...">
+              <input type="submit" name="submit" value="Search Bicycles">
+            </fieldset>
+          </form>
       </nav>
 
       <!-- right display section -->
@@ -81,22 +89,13 @@
         <form id="update-bicycle-form">
           <fieldset>
             <legend class='heading'>Update Bike</legend>
-            <input type="text" id="update-url" name="bicycle[url]" placeholder="URL">
             <input type="text" id="update-make" name="bicycle[make]" placeholder="Make">
             <input type="text" id="update-model" name="bicycle[model]" placeholder="Model">
             <input type="text" id="update-color" name="bicycle[color]" placeholder="color">
             <input type="text" id="update-number" name="bicycle[serial_number]" placeholder="serial number">
             <input type="text" id="update-size" name="bicycle[size]" placeholder="size">
+            <input type="text" id="update-url" name="bicycle[url]" placeholder="URL">
             <input type="submit" name="submit" value="Update Bicycle">
-          </fieldset>
-        </form>
-
-        <!-- find a bicycle by id form -->
-        <form id="find-a-bicycle-form">
-          <fieldset>
-            <legend class='heading'>Search Bicycles</legend>
-            <input type="text" id="bike-search" placeholder="Your search here...">
-            <input type="submit" name="submit" value="Search Bicycles">
           </fieldset>
         </form>
 

@@ -37,24 +37,19 @@ const showUpdateBicycle = function () {
   $('.show-update-form').on('click', () => {
     authUi.clearAll()
     store.updateId = $(event.target).parent().parent().data('id')
-    $('#update-url').val(store.data.bicycles.find((element) => {
-      return element.id === store.updateId
-    }).url)
-    $('#update-make').val(store.data.bicycles.find((element) => {
-      return element.id === store.updateId
-    }).make)
-    $('#update-model').val(store.data.bicycles.find((element) => {
-      return element.id === store.updateId
-    }).model)
-    $('#update-color').val(store.data.bicycles.find((element) => {
-      return element.id === store.updateId
-    }).color)
-    $('#update-number').val(store.data.bicycles.find((element) => {
-      return element.id === store.updateId
-    }).serial_number)
-    $('#update-size').val(store.data.bicycles.find((element) => {
-      return element.id === store.updateId
-    }).size)
+    // looks through the stored bicycles and returns the current bicycle
+    const findCurrentBike = function () {
+      return store.data.bicycles.find((bike) => {
+        return bike.id === store.updateId
+      })
+    }
+    // sets default value of form fields to the bicycles values
+    $('#update-make').val(findCurrentBike().make)
+    $('#update-model').val(findCurrentBike().model)
+    $('#update-color').val(findCurrentBike().color)
+    $('#update-number').val(findCurrentBike().number)
+    $('#update-size').val(findCurrentBike().size)
+    $('#update-url').val(findCurrentBike().url)
     $('#update-bicycle-form').show()
     $('#update-bicycle-form').on('submit', onUpdateBicycle)
   })

@@ -38,7 +38,7 @@ const onGetBicycles = function () {
 // show the search form
 const showFindBicycle = function () {
   authUi.clearAll()
-  $('#find-a-bicycle-form').show()
+  $('#search-form').show()
 }
 
 // search bicycles callback function
@@ -56,7 +56,7 @@ const addHandlers = function () {
   $('#show-create-form').on('click', showCreateBicycle)
   $('#create-bicycle-form').on('submit', onCreateBicycle)
   $('#show-all-bikes').on('click', onGetBicycles)
-  $('#find-a-bicycle-form').on('submit', onSearchBicycles)
+  $('#search-form').on('submit', onSearchBicycles)
   $('#show-find-form').on('click', showFindBicycle)
 }
 

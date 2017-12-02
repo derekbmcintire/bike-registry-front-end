@@ -58,7 +58,7 @@ const matchBicycle = function (arr, bikes) {
   })
   // if there are results in the result array, return success
   if (result.length > 0) {
-    $('#message').text('Search success!')
+    $('#message').text('Showing results for: ' + store.targetData.join(' '))
     return result
   } else {
     // else if there are no results, return no results found
@@ -68,7 +68,9 @@ const matchBicycle = function (arr, bikes) {
 
 // display search results
 const searchBicyclesSuccess = function (data) {
+  store.data = data
   authUi.clearAll()
+  $('#search-form').show()
   const showBicyclesHtml = searchBicyclesTemplate(matchBicycle(store.targetData, data.bicycles))
   $('.display-results').append(showBicyclesHtml)
   res.showUpdateBicycle()

@@ -47,7 +47,7 @@ const showUpdateBicycle = function () {
     $('#update-make').val(findCurrentBike().make)
     $('#update-model').val(findCurrentBike().model)
     $('#update-color').val(findCurrentBike().color)
-    $('#update-number').val(findCurrentBike().number)
+    $('#update-number').val(findCurrentBike().serial_number)
     $('#update-size').val(findCurrentBike().size)
     $('#update-url').val(findCurrentBike().url)
     $('#update-bicycle-form').show()

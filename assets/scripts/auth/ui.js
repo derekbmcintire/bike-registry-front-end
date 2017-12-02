@@ -45,7 +45,6 @@ const clearUpdateBicycle = function () {
 const clearAll = function () {
   clearCreateBicycle()
   clearUpdateBicycle()
-  $('#search-form').hide()
   $('.display-results').html('')
   $('#bike-search').val('')
 }
@@ -79,7 +78,7 @@ const signInFailure = function () {
 // display message on sign out success
 // hide main div and show sign-in/up form
 const signOutSuccess = function () {
-  $('#message').text('You have signed out successfully')
+  $('#message-top').text('You have signed out successfully')
   clearAll()
   $('.main').hide()
   $('.sign-in-up').show()
@@ -103,7 +102,7 @@ const changePasswordSuccess = function (data) {
 
 // display a message on change password failure
 const changePasswordFailure = function (data) {
-  $('#message').text('Error changing password')
+  $('#message-top').text('Error changing password')
 }
 
 module.exports = {

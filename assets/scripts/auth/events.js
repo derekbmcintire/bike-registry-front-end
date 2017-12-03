@@ -3,6 +3,12 @@
 const getFormFields = require(`../../../lib/get-form-fields`)
 const api = require('./api')
 const ui = require('./ui')
+const load = require('../templates/loader.handlebars')
+
+const showLoader = function () {
+  $('.sign-in-up').append(load)
+  $('.loader-container').show()
+}
 
 // sign up callback function
 const onSignUp = function (event) {
@@ -62,5 +68,6 @@ const addHandlers = function () {
 }
 
 module.exports = {
-  addHandlers
+  addHandlers,
+  showLoader
 }

@@ -52,12 +52,14 @@ const clearAll = function () {
 
 // display message on sign up success
 const signUpSuccess = function (data) {
+  $('.loader-container').remove()
   $('#sign-message').text('You signed-up successfully!')
   clearSignUp()
 }
 
 // display message on sign up failure
 const signUpFailure = function () {
+  $('.loader-container').remove()
   $('#sign-message').text('Error on sign-up')
 }
 
@@ -65,6 +67,7 @@ const signUpFailure = function () {
 // save user data in store
 // hide sign in form and show main div
 const signInSuccess = function (data) {
+  $('.loader-container').remove()
   store.user = data.user
   $('#display-email').text(store.user.email)
   $('#message-top').text('')
@@ -74,6 +77,7 @@ const signInSuccess = function (data) {
 
 // display message on sign in failure
 const signInFailure = function () {
+  $('.loader-container').remove()
   $('#sign-message').text('Error on sign in')
 }
 

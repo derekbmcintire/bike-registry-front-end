@@ -5,13 +5,11 @@
     <img class="bike-img" src={{bicycle.url}}>
   </div>
   <div class="show-right col-xs-5">
-    <ul>
-      <li><span class="attribute">Make:</span> {{bicycle.make}}</li>
-      <li><span class="attribute">Model:</span> {{bicycle.model}}</li>
-      <li><span class="attribute">color:</span> {{bicycle.color}}</li>
-      <li><span class="attribute">serial number:</span> {{bicycle.serial_number}}</li>
-      <li><span class="attribute">size:</span> {{bicycle.size}}</li>
-    </ul>
+      <p><span class="attribute">Make:</span> {{bicycle.make}}</p>
+      <p><span class="attribute">Model:</span> {{bicycle.model}}</p>
+      <p><span class="attribute">Color:</span> {{bicycle.color}}</p>
+      <p><span class="attribute">Serial Number:</span> {{bicycle.serial_number}}</p>
+      <p><span class="attribute">Size:</span> {{bicycle.size}}</p>
   </div>
 
 {{#if bicycle.editable}}

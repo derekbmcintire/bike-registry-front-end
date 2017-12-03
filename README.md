@@ -40,13 +40,13 @@ In addition to the basic requirements, I added some special features.
 - A user can see a list of all bicycles in the database, or a list of just their bicycles.
 
 ## Wireframe
-[Spoke Retriever Wireframe](https://c1.staticflickr.com/5/4538/23906244027_eeca8a2e9e.jpg)
+![Spoke Retriever Wireframe](https://c1.staticflickr.com/5/4538/23906244027_eeca8a2e9e.jpg)
 
 ## Entity Relationship Diagram
-V.1
-[ERD v.1](https://c1.staticflickr.com/5/4556/38786592582_2cd506a8c3.jpg)
-V.2
-[ERD v.2](https://c1.staticflickr.com/5/4561/38786592192_be3f51508a.jpg)
+- V.1
+![ERD v.1](https://c1.staticflickr.com/5/4556/38786592582_2cd506a8c3.jpg)
+- V.2
+![ERD v.2](https://c1.staticflickr.com/5/4561/38786592192_be3f51508a.jpg)
 
 ## Updates
 I plan to add a join table and allow users to create events with their bicycles.  If their bike is stolen, they can register a stolen event.  If their bicycle is recovered, they can register a recovered event.  I also plan to eventually implement the Google Maps API to show a map of locations where bicycles were stolen.

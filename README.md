@@ -3,6 +3,7 @@
 ## Overview
 - Link to Front End:
 [Link to Spoke Retriever](https://derekbmcintire.github.io/bike-registry-front-end/)
+- Link to Front End Repo: [Link to Front End Repo](https://github.com/derekbmcintire/bike-registry-front-end)
 - Link to API:
 [Link to Spoke Retriever API](https://aqueous-brook-70100.herokuapp.com/)
 - Link to API GitHub Repo:

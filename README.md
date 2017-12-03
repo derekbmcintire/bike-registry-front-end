@@ -1,11 +1,11 @@
 # WDI21 Boston Project \#2 - Spoke Retriever
 
 ## Overview
-Link to Front End:
+- Link to Front End:
 [Link to Spoke Retriever](https://derekbmcintire.github.io/bike-registry-front-end/)
-Link to API:
+- Link to API:
 [Link to Spoke Retriever API](https://aqueous-brook-70100.herokuapp.com/)
-Link to API GitHub Repo:
+- Link to API GitHub Repo:
 [Link to Spoke Retriever API repo](https://github.com/derekbmcintire/bike-registry-back-end)
 
 For my second project at General Assembly I needed to build  a full-stack single page application that allowed a user to sign up, sign in, change password, create a resource, read a resource, update a resource, delete a resource and sign out. I chose to build a site that lets users register their bicycles called Spoke Retriever. My user stories were:

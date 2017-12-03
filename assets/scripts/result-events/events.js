@@ -55,9 +55,35 @@ const showUpdateBicycle = function () {
   })
 }
 
+const onRegisterStolen = function () {
+  event.preventDefault()
+  $('#register-form').hide()
+  const data = getFormFields(event.target)
+  api.registerStolen(data)
+    .then(ui.registerStolenSuccess)
+    .catch(ui.registerStolenFailure)
+}
+
+const showRegisterStolen = function () {
+  $('.register-stolen').on('click', () => {
+    authUi.clearAll()
+    store.updateId = $(event.target).parent().parent().data('id')
+    // looks through the stored bicycles and returns the current bicycle
+    // const findCurrentBike = function () {
+    //   return store.data.bicycles.find((bike) => {
+    //     return bike.id === store.updateId
+    //   })
+    // }
+    // ...
+    $('#register-form').show()
+    $('#register-form').on('submit', onRegisterStolen)
+  })
+}
+
 module.exports = {
   onDeleteBicycle,
   remove,
   onUpdateBicycle,
-  showUpdateBicycle
+  showUpdateBicycle,
+  showRegisterStolen
 }

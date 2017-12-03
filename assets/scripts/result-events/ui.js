@@ -18,12 +18,22 @@ const updateBicycleSuccess = function () {
 
 // display message for update bicycle failure
 const updateBicycleFailure = function () {
-  $('#message').text('Error updating bicycle')
+  $('#message').text('Error updating bike')
+}
+
+const registerStolenSuccess = function () {
+  $('#message').text('Bike registered as stolen')
+}
+
+const registerStolenFailure = function () {
+  $('#message').text('Error on bike registration')
 }
 
 module.exports = {
   deleteBicycleSuccess,
   deleteBicycleFailure,
   updateBicycleSuccess,
-  updateBicycleFailure
+  updateBicycleFailure,
+  registerStolenSuccess,
+  registerStolenFailure
 }

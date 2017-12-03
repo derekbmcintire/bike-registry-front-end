@@ -47,6 +47,7 @@ const clearAll = function () {
   clearUpdateBicycle()
   $('.display-results').html('')
   $('#bike-search').val('')
+  $('#register-form').hide()
 }
 
 // display message on sign up success

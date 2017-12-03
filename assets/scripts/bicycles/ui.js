@@ -25,6 +25,7 @@ const getBicyclesSuccess = function (data) {
   $('.display-results').append(showBicyclesHtml)
   res.showUpdateBicycle()
   res.remove()
+  res.showRegisterStolen()
 }
 
 // display message on get all bicycles failure
@@ -75,6 +76,7 @@ const searchBicyclesSuccess = function (data) {
   $('.display-results').append(showBicyclesHtml)
   res.showUpdateBicycle()
   res.remove()
+  res.showRegisterStolen()
 }
 
 // display message on search failure

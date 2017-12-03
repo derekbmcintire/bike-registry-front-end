@@ -68,6 +68,7 @@ const showRegisterStolen = function () {
   $('.register-stolen').on('click', () => {
     authUi.clearAll()
     store.updateId = $(event.target).parent().parent().data('id')
+    $('#bike_id').val(store.updateId)
     // looks through the stored bicycles and returns the current bicycle
     // const findCurrentBike = function () {
     //   return store.data.bicycles.find((bike) => {

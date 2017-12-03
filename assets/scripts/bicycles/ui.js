@@ -18,7 +18,7 @@ const createBicycleFailure = function () {
 
 // display message on get all bicycles success
 const getBicyclesSuccess = function (data) {
-  console.log(data.bicycles)
+  console.log(data)
   $('#message').text('Showing results')
   store.data = data
   const showBicyclesHtml = showBicyclesTemplate({ bicycles: data.bicycles })

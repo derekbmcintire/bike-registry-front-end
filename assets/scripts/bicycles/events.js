@@ -51,6 +51,12 @@ const onSearchBicycles = function (event) {
     .catch(ui.searchBicyclesFailure)
 }
 
+const onGetStolenBicycles = function () {
+  api.getStolenBicycles()
+    .then(ui.getBicyclesSuccess)
+    .catch(ui.getBicyclesFailure)
+}
+
 // click handlers
 const addHandlers = function () {
   $('#show-my-bikes').on('click', onGetMyBicycles)
@@ -59,6 +65,7 @@ const addHandlers = function () {
   $('#show-all-bikes').on('click', onGetBicycles)
   $('#search-form').on('submit', onSearchBicycles)
   $('#show-find-form').on('click', showFindBicycle)
+  $('#show-stolen-bikes').on('click', onGetStolenBicycles)
 }
 
 module.exports = {

@@ -26,6 +26,7 @@ const getBicyclesSuccess = function (data) {
   $('.display-results').append(showBicyclesHtml)
   res.showUpdateBicycle()
   res.remove()
+  res.recover()
   res.showRegisterStolen()
 }
 

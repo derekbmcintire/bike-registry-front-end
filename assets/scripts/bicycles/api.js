@@ -60,6 +60,7 @@ const updateBicycle = function (data) {
 }
 
 const registerStolen = function (data) {
+  console.log(data)
   return $.ajax({
     url: config.apiOrigin + '/events',
     method: 'POST',
@@ -80,6 +81,16 @@ const getStolenBicycles = function () {
   })
 }
 
+const recoverBicycle = function () {
+  return $.ajax({
+    url: config.apiOrigin + '/bicycles/recover/' + store.updateId,
+    method: 'DELETE',
+    headers: {
+      Authorization: 'Token token=' + store.user.token
+    }
+  })
+}
+
 module.exports = {
   createBicycle,
   getBicycles,
@@ -87,5 +98,6 @@ module.exports = {
   updateBicycle,
   getMyBicycles,
   registerStolen,
-  getStolenBicycles
+  getStolenBicycles,
+  recoverBicycle
 }

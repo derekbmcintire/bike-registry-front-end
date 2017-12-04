@@ -1,5 +1,5 @@
 'use strict'
-// const store = require('../store')
+const authUi = require('../auth/ui')
 
 // display message for delete bicycle success
 const deleteBicycleSuccess = function () {
@@ -29,11 +29,22 @@ const registerStolenFailure = function () {
   $('#message').text('Error on bike registration')
 }
 
+const recoverBicycleSuccess = function () {
+  authUi.clearAll()
+  $('#message').text('Bicycle status recovered!')
+}
+
+const recoverBicycleFailure = function () {
+  $('#message').text('Error updating bicycle status')
+}
+
 module.exports = {
   deleteBicycleSuccess,
   deleteBicycleFailure,
   updateBicycleSuccess,
   updateBicycleFailure,
   registerStolenSuccess,
-  registerStolenFailure
+  registerStolenFailure,
+  recoverBicycleSuccess,
+  recoverBicycleFailure
 }

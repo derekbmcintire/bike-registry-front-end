@@ -12,18 +12,25 @@
       <p><span class="attribute">Size:</span> {{bicycle.size}}</p>
   </div>
 
-{{#if bicycle.editable}}
-  <div class="col-xs-3">
-    <button class="show-update-form">Update</button>
-    <button class="remove">Remove</button>
+
+  <div class="col-xs-3 status">
     {{#if bicycle.stolen}}
-    <h3>STOLEN</h3>
-    <button class="register-recovered">Register Bicycle Recovered</button>
-    {{else}}
-    <button class="register-stolen">Register Stolen</button>
+      <h4>STOLEN</h4>
+    {{/if}}
+
+    {{#if bicycle.editable}}
+      <button class="show-update-form">Update</button>
+      <button class="remove">Remove</button>
+        {{#if bicycle.stolen}}
+          <button class="recover">Bike was recovered</button>
+        {{else}}
+          <button class="register-stolen">Bike was stolen</button>
+        {{/if}}
+        {{else}}
+        <button class="found">I found this bike</button>
     {{/if}}
   </div>
-{{/if}}
+
 
 </div>
 

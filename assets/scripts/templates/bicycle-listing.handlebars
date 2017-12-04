@@ -27,7 +27,9 @@
           <button class="register-stolen">Bike was stolen</button>
         {{/if}}
         {{else}}
-        <button class="found">I found this bike</button>
+        {{#if bicycle.stolen}}
+          <button class="found">I found this bike</button>
+        {{/if}}
     {{/if}}
   </div>
 

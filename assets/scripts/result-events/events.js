@@ -57,15 +57,16 @@ const showUpdateBicycle = function () {
 
 const onRegisterStolen = function () {
   event.preventDefault()
+  console.log('onRegisterStolen once')
   $('#register-form').hide()
   const data = getFormFields(event.target)
-  console.log('onRegisterStolen: ' + data)
   api.registerStolen(data)
     .then(ui.registerStolenSuccess)
     .catch(ui.registerStolenFailure)
 }
 
 const showRegisterStolen = function () {
+  console.log('set show click')
   $('.register-stolen').on('click', () => {
     authUi.clearAll()
     store.updateId = $(event.target).parent().parent().data('id')
@@ -79,6 +80,7 @@ const showRegisterStolen = function () {
     // ...
     $('#register-form').show()
     $('#register-form').on('submit', onRegisterStolen)
+    console.log('onRegisterStolen submit listener added')
   })
 }
 

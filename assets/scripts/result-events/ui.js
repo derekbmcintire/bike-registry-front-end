@@ -22,6 +22,10 @@ const updateBicycleFailure = function () {
 }
 
 const registerStolenSuccess = function () {
+  $('#register-form').off('submit')
+  $('.register-stolen').off('click')
+  console.log('clicks off')
+  $('#event-location').val('')
   $('#message').text('Bike registered as stolen')
 }
 
@@ -31,6 +35,9 @@ const registerStolenFailure = function () {
 
 const recoverBicycleSuccess = function () {
   authUi.clearAll()
+  $('#register-form').off('submit')
+  $('.register-stolen').off('click')
+  console.log('clicks off')
   $('#message').text('Bicycle status recovered!')
 }
 

@@ -60,7 +60,6 @@ const updateBicycle = function (data) {
 }
 
 const registerStolen = function (data) {
-  console.log(data)
   return $.ajax({
     url: config.apiOrigin + '/events',
     method: 'POST',

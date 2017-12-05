@@ -62,6 +62,7 @@ const updateBicycle = function (data) {
 
 // create a new stolen event ajax request
 const registerStolen = function (data) {
+  console.log(data)
   return $.ajax({
     url: config.apiOrigin + '/events',
     method: 'POST',

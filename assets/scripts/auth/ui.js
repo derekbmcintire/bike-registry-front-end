@@ -72,7 +72,6 @@ const signInSuccess = function (data) {
   $('#display-email').text(store.user.email)
   $('#message-top').text('')
   clearSignIn()
-  onGetBicycles
 }
 
 // display message on sign in failure

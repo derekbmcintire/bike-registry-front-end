@@ -81,7 +81,6 @@ const onRegisterStolen = function () {
   event.preventDefault()
   $('#register-form').hide()
   const data = getFormFields(event.target)
-  console.log('onRegisterStolen: ' + data)
   api.registerStolen(data)
     .then(ui.registerStolenSuccess)
     .catch(ui.registerStolenFailure)
@@ -95,24 +94,6 @@ const showRegisterStolen = function () {
     $('#bike_id').val(store.updateId)
     $('#register-form').show()
     $('#register-form').on('submit', onRegisterStolen)
-<<<<<<< HEAD
-=======
-  })
-}
-
-// deletes a bicycle from the database
-const onRecoverBicycle = function () {
-  api.recoverBicycle()
-    .then(ui.recoverBicycleSuccess)
-    .catch(ui.recoverBicycleFailure)
-}
-
-// recovers a bicycle and deletes stolen event
-const recover = function () {
-  $('.recover').on('click', () => {
-    store.updateId = $(event.target).parent().parent().data('id')
-    onRecoverBicycle()
->>>>>>> parent of 909ff44... Remove extra click events
   })
 }
 

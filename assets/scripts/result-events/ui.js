@@ -23,12 +23,9 @@ const updateBicycleFailure = function () {
 
 // display message for register bicycle stolen success
 const registerStolenSuccess = function () {
-<<<<<<< HEAD
   $('#register-form').off('submit')
   $('.register-stolen').off('click')
   $('#event-location').val('')
-=======
->>>>>>> parent of 909ff44... Remove extra click events
   $('#message').text('Bike registered as stolen')
 }
 
@@ -37,19 +34,18 @@ const registerStolenFailure = function () {
   $('#message').text('Error on bike registration')
 }
 
-<<<<<<< HEAD
 // display message for register bicycle recovered success
 const registerRecoveredSuccess = function () {
   $('#recover-form').off('submit')
   $('.recover').off('click')
   $('#r_event-location').val('')
   $('#message').text('Bike registered as recovered')
-=======
-const recoverBicycleSuccess = function () {
-  authUi.clearAll()
-  $('#message').text('Bicycle status recovered!')
->>>>>>> parent of 909ff44... Remove extra click events
 }
+
+// const recoverBicycleSuccess = function () {
+//   // authUi.clearAll()
+//   $('#message').text('Bicycle status recovered!')
+// }
 
 // display message for register bicycle recovered failure
 const registerRecoveredFailure = function () {

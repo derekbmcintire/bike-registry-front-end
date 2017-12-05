@@ -19,10 +19,8 @@ const createBicycleFailure = function () {
 // display message on get all bicycles success
 let stolen = false
 const getBicyclesSuccess = function (data) {
-  console.log(stolen)
   if (stolen) {
     store.data = data.filter((bike) => {
-      console.log(bike)
       return bike.stolen === true
     })
   } else {
@@ -30,7 +28,11 @@ const getBicyclesSuccess = function (data) {
   }
   $('#register-form').off('submit')
   $('.register-stolen').off('click')
-  $('#message').text('Showing results')
+  if (store.data.bicycles.length < 1) {
+    $('#message').text('No bikes yet, create a bike to get started!')
+  } else {
+    $('#message').text('Showing results')
+  }
   const showBicyclesHtml = showBicyclesTemplate({ bicycles: data.bicycles })
   authUi.clearAll()
   $('.display-results').append(showBicyclesHtml)

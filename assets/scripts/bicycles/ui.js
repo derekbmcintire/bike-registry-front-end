@@ -17,24 +17,36 @@ const createBicycleFailure = function () {
 }
 
 // display message on get all bicycles success
+let stolen = false
 const getBicyclesSuccess = function (data) {
+  console.log(stolen)
+  if (stolen) {
+    store.data = data.filter((bike) => {
+      console.log(bike)
+      return bike.stolen === true
+    })
+  } else {
+    store.data = data
+  }
   $('#register-form').off('submit')
   $('.register-stolen').off('click')
   $('#message').text('Showing results')
-  store.data = data
   const showBicyclesHtml = showBicyclesTemplate({ bicycles: data.bicycles })
   authUi.clearAll()
   $('.display-results').append(showBicyclesHtml)
   res.showUpdateBicycle()
   res.remove()
-  res.recover()
+  res.showRegisterRecovered()
   res.showRegisterStolen()
+  stolen = false
 }
 
 // display message on get all bicycles failure
 const getBicyclesFailure = function () {
   $('#message').text('Error getting bike')
 }
+
+/* ******************** SEARCH ******************** */
 
 // search all bicycles for search parameters
 // takes an array of search parameters and an array of all bicycles in db
@@ -93,5 +105,6 @@ module.exports = {
   getBicyclesSuccess,
   getBicyclesFailure,
   searchBicyclesSuccess,
-  searchBicyclesFailure
+  searchBicyclesFailure,
+  stolen
 }

@@ -1,10 +1,16 @@
 {{#each bicycles as |bicycle|}}
 
+<!-- Show Photo and Status -->
 <div class="bicycles row" data-id="{{bicycle.id}}">
-  <div class="show-left col-xs-4">
+  <div class="show-left col-xs-6">
     <img class="bike-img" src={{bicycle.url}}>
+    {{#if bicycle.stolen}}
+      <h4>STOLEN</h4>
+    {{/if}}
   </div>
-  <div class="show-right col-xs-5">
+
+  <!-- Show Bike Details -->
+  <div class="show-right col-xs-6">
       <p><span class="attribute">Make:</span> {{bicycle.make}}</p>
       <p><span class="attribute">Model:</span> {{bicycle.model}}</p>
       <p><span class="attribute">Color:</span> {{bicycle.color}}</p>
@@ -12,19 +18,15 @@
       <p><span class="attribute">Size:</span> {{bicycle.size}}</p>
   </div>
 
-
-  <div class="col-xs-3 status">
-    {{#if bicycle.stolen}}
-      <h4>STOLEN</h4>
-    {{/if}}
-
+  <!-- Show Bike Options -->
+  <div class="col-xs-12 status">
     {{#if bicycle.editable}}
       <button class="show-update-form">Update</button>
       <button class="remove">Remove</button>
         {{#if bicycle.stolen}}
-          <button class="recover">Bike was recovered</button>
+          <button class="recover">Report bike recovered</button>
         {{else}}
-          <button class="register-stolen">Bike was stolen</button>
+          <button class="register-stolen">Report bike stolen</button>
         {{/if}}
         {{else}}
         {{#if bicycle.stolen}}
@@ -32,7 +34,6 @@
         {{/if}}
     {{/if}}
   </div>
-
 
 </div>
 

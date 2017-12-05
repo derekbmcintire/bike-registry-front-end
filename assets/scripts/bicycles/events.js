@@ -51,6 +51,7 @@ const onSearchBicycles = function (event) {
     .catch(ui.searchBicyclesFailure)
 }
 
+// get stolen bicycles callback function
 const onGetStolenBicycles = function () {
   api.getStolenBicycles()
     .then(ui.getBicyclesSuccess)

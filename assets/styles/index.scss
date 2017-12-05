@@ -17,9 +17,14 @@ h1 {
   font-weight: bold;
 }
 
+.navs {
+  margin-bottom: 25px;
+}
+
 button {
   background-color: transparent;
   border: none;
+  font-weight: 700;
   color: #585858;
   &:hover {
     outline: 2px solid #118C4E;
@@ -66,7 +71,7 @@ ul {
 
 .main {
   margin: 0 auto;
-  min-width: 500px;
+  min-width: 350px;
   max-width: 1000px;
   width: 80%;
 }
@@ -79,14 +84,16 @@ ul {
   overflow: auto;
 }
 
+.search-form {
+  margin-bottom: 15px;
+  margin-top: -20px;
+}
+
 .show-left {
-  background-color: white;
-  border: 1px solid #118C4E;
-  height: 150px;
-  line-height: 150px;
   margin: 0;
   overflow: hidden;
   padding: 0;
+  text-align: center;
   width: 150px;
 }
 
@@ -104,4 +111,24 @@ ul {
 
 .title {
   text-align: center;
+}
+
+@media(max-width: 991px) {
+.bike-nav {
+  display: inline-block;
+}
+.main {
+  width: 90%;
+  text-align: center;
+  margin: 0 auto;
+}
+
+.right {
+  height: 100%;
+}
+
+.search-form {
+  display: block;
+}
+
 }

@@ -1,6 +1,7 @@
 'use strict'
 const config = require('../config')
 const store = require('../store')
+const ui = require('./ui')
 
 // create bicycle ajax request
 const createBicycle = function (data) {
@@ -47,7 +48,7 @@ const deleteBicycle = function () {
   })
 }
 
-// update a single bicycle
+// update a single bicycle ajax request
 const updateBicycle = function (data) {
   return $.ajax({
     url: config.apiOrigin + '/bicycles/' + store.updateId,
@@ -59,6 +60,7 @@ const updateBicycle = function (data) {
   })
 }
 
+// create a new stolen event ajax request
 const registerStolen = function (data) {
   return $.ajax({
     url: config.apiOrigin + '/events',
@@ -70,9 +72,11 @@ const registerStolen = function (data) {
   })
 }
 
+// get all stolen bicycles ajax request
 const getStolenBicycles = function () {
+  ui.stolen = true
   return $.ajax({
-    url: config.apiOrigin + '/bicycles/stolen',
+    url: config.apiOrigin + '/bicycles',
     method: 'GET',
     headers: {
       Authorization: 'Token token=' + store.user.token
@@ -80,13 +84,15 @@ const getStolenBicycles = function () {
   })
 }
 
-const recoverBicycle = function () {
+// create a new recovered event ajax request
+const registerRecovered = function (data) {
   return $.ajax({
-    url: config.apiOrigin + '/bicycles/recover/' + store.updateId,
-    method: 'DELETE',
+    url: config.apiOrigin + '/events',
+    method: 'POST',
     headers: {
       Authorization: 'Token token=' + store.user.token
-    }
+    },
+    data
   })
 }
 
@@ -98,5 +104,5 @@ module.exports = {
   getMyBicycles,
   registerStolen,
   getStolenBicycles,
-  recoverBicycle
+  registerRecovered
 }

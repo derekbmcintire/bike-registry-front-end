@@ -1,5 +1,5 @@
 'use strict'
-const authUi = require('../auth/ui')
+// const authUi = require('../auth/ui')
 
 // display message for delete bicycle success
 const deleteBicycleSuccess = function () {
@@ -21,28 +21,30 @@ const updateBicycleFailure = function () {
   $('#message').text('Error updating bike')
 }
 
+// display message for register bicycle stolen success
 const registerStolenSuccess = function () {
   $('#register-form').off('submit')
   $('.register-stolen').off('click')
-  console.log('clicks off')
   $('#event-location').val('')
   $('#message').text('Bike registered as stolen')
 }
 
+// display message for register bicycle stolen failure
 const registerStolenFailure = function () {
   $('#message').text('Error on bike registration')
 }
 
-const recoverBicycleSuccess = function () {
-  authUi.clearAll()
-  $('#register-form').off('submit')
-  $('.register-stolen').off('click')
-  console.log('clicks off')
-  $('#message').text('Bicycle status recovered!')
+// display message for register bicycle recovered success
+const registerRecoveredSuccess = function () {
+  $('#recover-form').off('submit')
+  $('.recover').off('click')
+  $('#r_event-location').val('')
+  $('#message').text('Bike registered as recovered')
 }
 
-const recoverBicycleFailure = function () {
-  $('#message').text('Error updating bicycle status')
+// display message for register bicycle recovered failure
+const registerRecoveredFailure = function () {
+  $('#message').text('Error on bike registration')
 }
 
 module.exports = {
@@ -52,6 +54,6 @@ module.exports = {
   updateBicycleFailure,
   registerStolenSuccess,
   registerStolenFailure,
-  recoverBicycleSuccess,
-  recoverBicycleFailure
+  registerRecoveredSuccess,
+  registerRecoveredFailure
 }

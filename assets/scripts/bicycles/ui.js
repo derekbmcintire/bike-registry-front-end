@@ -18,9 +18,12 @@ const createBicycleFailure = function () {
 
 // display message on get all bicycles success
 const getBicyclesSuccess = function (data) {
-  console.log(data)
-  $('#message').text('Showing results')
   store.data = data
+  if (store.data.bicycles.length < 1) {
+    $('#message').text('You haven\'t created any bikes yet!')
+  } else {
+    $('#message').text('Showing results')
+  }
   const showBicyclesHtml = showBicyclesTemplate({ bicycles: data.bicycles })
   authUi.clearAll()
   $('.display-results').append(showBicyclesHtml)
@@ -33,6 +36,21 @@ const getBicyclesSuccess = function (data) {
 // display message on get all bicycles failure
 const getBicyclesFailure = function () {
   $('#message').text('Error getting bike')
+}
+
+const getStolenBicyclesSuccess = function (data) {
+  store.data = data.bicycles.filter((bike) => {
+    return bike.stolen === true
+  })
+  console.log(store.data)
+  $('#message').text('Showing results')
+  const showBicyclesHtml = showBicyclesTemplate({ bicycles: store.data })
+  authUi.clearAll()
+  $('.display-results').append(showBicyclesHtml)
+  res.showUpdateBicycle()
+  res.remove()
+  res.recover()
+  res.showRegisterStolen()
 }
 
 // search all bicycles for search parameters
@@ -92,5 +110,6 @@ module.exports = {
   getBicyclesSuccess,
   getBicyclesFailure,
   searchBicyclesSuccess,
-  searchBicyclesFailure
+  searchBicyclesFailure,
+  getStolenBicyclesSuccess
 }

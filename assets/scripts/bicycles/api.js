@@ -70,16 +70,16 @@ const registerStolen = function (data) {
     data
   })
 }
-
-const getStolenBicycles = function () {
-  return $.ajax({
-    url: config.apiOrigin + '/bicycles/stolen',
-    method: 'GET',
-    headers: {
-      Authorization: 'Token token=' + store.user.token
-    }
-  })
-}
+//
+// const getStolenBicycles = function () {
+//   return $.ajax({
+//     url: config.apiOrigin + '/bicycles/stolen',
+//     method: 'GET',
+//     headers: {
+//       Authorization: 'Token token=' + store.user.token
+//     }
+//   })
+// }
 
 const recoverBicycle = function () {
   return $.ajax({
@@ -98,6 +98,6 @@ module.exports = {
   updateBicycle,
   getMyBicycles,
   registerStolen,
-  getStolenBicycles,
+  // getStolenBicycles,
   recoverBicycle
 }

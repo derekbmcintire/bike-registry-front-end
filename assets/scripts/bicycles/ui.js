@@ -3,11 +3,11 @@ const store = require('../store')
 const res = require('../result-events/events')
 const showBicyclesTemplate = require('../templates/bicycle-listing.handlebars')
 const searchBicyclesTemplate = require('../templates/search-results.handlebars')
-const authUi = require('../auth/ui')
+const clear = require('../auth/clears')
 
 // display message on create bicycle success
 const createBicycleSuccess = function (data) {
-  authUi.clearAll()
+  clear.clearAll()
   $('#message').text('Bike successfully created')
 }
 
@@ -22,12 +22,31 @@ const getBicyclesSuccess = function (data) {
   $('.register-stolen').off('click')
   store.data = data
   if (store.data.bicycles.length < 1) {
-    $('#message').text('You haven\'t created any bikes yet!')
+    $('#message').text('There are no bikes yet, create one to get started!')
   } else {
-    $('#message').text('Showing results')
+    $('#message').text('Showing all bicycles')
   }
   const showBicyclesHtml = showBicyclesTemplate({ bicycles: data.bicycles })
-  authUi.clearAll()
+  clear.clearAll()
+  $('.display-results').append(showBicyclesHtml)
+  res.showUpdateBicycle()
+  res.remove()
+  res.showRecoverStolen()
+  res.showRegisterStolen()
+}
+
+// display message on get all bicycles success
+const getMyBicyclesSuccess = function (data) {
+  $('#register-form').off('submit')
+  $('.register-stolen').off('click')
+  store.data = data
+  if (store.data.bicycles.length < 1) {
+    $('#message').text('You haven\'t created any bikes yet!')
+  } else {
+    $('#message').text('Your bicycles')
+  }
+  const showBicyclesHtml = showBicyclesTemplate({ bicycles: data.bicycles })
+  clear.clearAll()
   $('.display-results').append(showBicyclesHtml)
   res.showUpdateBicycle()
   res.remove()
@@ -44,10 +63,13 @@ const getStolenBicyclesSuccess = function (data) {
   store.data = data.bicycles.filter((bike) => {
     return bike.stolen === true
   })
-  console.log(store.data)
-  $('#message').text('Showing results')
+  if (store.data.length < 1) {
+    $('#message').text('No stolen bikes!')
+  } else {
+    $('#message').text('Showing stolen bikes')
+  }
   const showBicyclesHtml = showBicyclesTemplate({ bicycles: store.data })
-  authUi.clearAll()
+  clear.clearAll()
   $('.display-results').append(showBicyclesHtml)
   res.showUpdateBicycle()
   res.remove()
@@ -92,7 +114,7 @@ const matchBicycle = function (arr, bikes) {
 // display search results
 const searchBicyclesSuccess = function (data) {
   store.data = data
-  authUi.clearAll()
+  clear.clearAll()
   $('#search-form').show()
   const showBicyclesHtml = searchBicyclesTemplate(matchBicycle(store.targetData, data.bicycles))
   $('.display-results').append(showBicyclesHtml)
@@ -113,5 +135,6 @@ module.exports = {
   getBicyclesFailure,
   searchBicyclesSuccess,
   searchBicyclesFailure,
-  getStolenBicyclesSuccess
+  getStolenBicyclesSuccess,
+  getMyBicyclesSuccess
 }

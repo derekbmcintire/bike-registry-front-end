@@ -4,7 +4,7 @@ const getFormFields = require(`../../../lib/get-form-fields`)
 const api = require('../bicycles/api')
 const store = require('../store')
 const ui = require('./ui')
-const authUi = require('../auth/ui')
+const clear = require('../auth/clears')
 
 // removes a bicycle from the view
 const remove = function () {
@@ -35,7 +35,7 @@ const onUpdateBicycle = function () {
 // show the update bike form
 const showUpdateBicycle = function () {
   $('.show-update-form').on('click', () => {
-    authUi.clearAll()
+    clear.clearAll()
     store.updateId = $(event.target).parent().parent().data('id')
     // looks through the stored bicycles and returns the current bicycle
     const findCurrentBike = function () {
@@ -67,7 +67,7 @@ const onRegisterStolen = function () {
 
 const showRegisterStolen = function () {
   $('.register-stolen').on('click', () => {
-    authUi.clearAll()
+    clear.clearAll()
     store.updateId = $(event.target).parent().parent().data('id')
     $('#bike_id').val(store.updateId)
     $('#register-form').show()
@@ -88,7 +88,7 @@ const onRecoverStolen = function () {
 // recovers a bicycle and deletes stolen event
 const showRecoverStolen = function () {
   $('.recover').on('click', () => {
-    authUi.clearAll()
+    clear.clearAll()
     store.updateId = $(event.target).parent().parent().data('id')
     $('#r_bike_id').val(store.updateId)
     $('#recover-form').show()

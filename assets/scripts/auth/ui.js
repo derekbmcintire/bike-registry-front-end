@@ -1,60 +1,13 @@
 'use strict'
 const store = require('../store')
-
-// clear sign up forms
-const clearSignUp = function () {
-  $('#sign-up-email').val('')
-  $('#sign-up-password').val('')
-  $('#sign-up-password-confirm').val('')
-}
-
-// clear sign in fields, hide sign in/up forms and show main div
-const clearSignIn = function () {
-  $('.sign-in-up').hide()
-  $('#sign-in-email').val('')
-  $('#sign-in-password').val('')
-  $('#sign-up-email').val('')
-  $('#sign-up-password').val('')
-  $('#sign-up-password-confirm').val('')
-  $('.main').show()
-}
-
-// clear create bicycle fields and forms
-const clearCreateBicycle = function () {
-  $('#bicycle-make').val('')
-  $('#bicycle-model').val('')
-  $('#bicycle-color').val('')
-  $('#serial-number').val('')
-  $('#bicycle-size').val('')
-  $('#bicycle-url').val('')
-  $('#create-bicycle-form').hide()
-}
-
-// clear update bicycle fields and forms
-const clearUpdateBicycle = function () {
-  $('#update-make').val('')
-  $('#update-model').val('')
-  $('#update-color').val('')
-  $('#update-number').val('')
-  $('#update-size').val('')
-  $('#update-url').val('')
-  $('#update-bicycle-form').hide()
-}
-
-// clear all forms and results
-const clearAll = function () {
-  clearCreateBicycle()
-  clearUpdateBicycle()
-  $('.display-results').html('')
-  $('#bike-search').val('')
-  $('#register-form').hide()
-}
+const clear = require('./clears')
+const bicycles = require('../bicycles/events')
 
 // display message on sign up success
 const signUpSuccess = function (data) {
   $('.loader-container').remove()
   $('#sign-message').text('You signed-up successfully!')
-  clearSignUp()
+  clear.clearSignUp()
 }
 
 // display message on sign up failure
@@ -72,7 +25,8 @@ const signInSuccess = function (data) {
   $('#display-email').text(store.user.email)
   $('#message-top').text('')
   $('#message').text('You have signed in successfully')
-  clearSignIn()
+  clear.clearSignIn()
+  bicycles.onGetBicycles()
 }
 
 // display message on sign in failure
@@ -85,7 +39,7 @@ const signInFailure = function () {
 // hide main div and show sign-in/up form
 const signOutSuccess = function () {
   $('#message-top').text('You have signed out successfully')
-  clearAll()
+  clear.clearAll()
   $('.main').hide()
   $('.sign-in-up').show()
 }
@@ -120,6 +74,5 @@ module.exports = {
   signOutSuccess,
   signOutFailure,
   changePasswordSuccess,
-  changePasswordFailure,
-  clearAll
+  changePasswordFailure
 }

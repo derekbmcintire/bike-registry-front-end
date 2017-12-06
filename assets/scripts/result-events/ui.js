@@ -1,5 +1,4 @@
 'use strict'
-const authUi = require('../auth/ui')
 
 // display message for delete bicycle success
 const deleteBicycleSuccess = function () {

@@ -4,11 +4,11 @@ const getFormFields = require(`../../../lib/get-form-fields`)
 const api = require('./api')
 const ui = require('./ui')
 const store = require('../store')
-const authUi = require('../auth/ui')
+const clear = require('../auth/clears')
 
 // show the create bike form
 const showCreateBicycle = function () {
-  authUi.clearAll()
+  clear.clearAll()
   $('#message').text('')
   $('#create-bicycle-form').show()
 }
@@ -25,7 +25,7 @@ const onCreateBicycle = function (event) {
 // get all my bicycles
 const onGetMyBicycles = function () {
   api.getMyBicycles()
-    .then(ui.getBicyclesSuccess)
+    .then(ui.getMyBicyclesSuccess)
     .catch(ui.getBicyclesFailure)
 }
 
@@ -38,7 +38,7 @@ const onGetBicycles = function () {
 
 // show the search form
 const showFindBicycle = function () {
-  authUi.clearAll()
+  clear.clearAll()
   $('#search-form').show()
 }
 
@@ -69,5 +69,6 @@ const addHandlers = function () {
 }
 
 module.exports = {
-  addHandlers
+  addHandlers,
+  onGetBicycles
 }

@@ -30,6 +30,10 @@ ul {
   list-style-type: none;
 }
 
+p {
+  margin: 0;
+}
+
 .attribute {
   font-weight: 700;
 }
@@ -50,8 +54,9 @@ ul {
 
 .bike-img-wrap {
   display: inline-block;
-  max-height: 150px;
+  height: 100px;
   overflow: hidden;
+  width: 100px;
 }
 
 .bike-nav {
@@ -104,6 +109,10 @@ ul {
 
 .status {
   text-align: center;
+}
+
+.stolen-label {
+  margin: 0;
 }
 
 .title {

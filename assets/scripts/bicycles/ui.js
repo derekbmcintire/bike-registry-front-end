@@ -52,7 +52,7 @@ const getMyBicyclesSuccess = function (data) {
     $('#message').text('There are no bikes yet, create one to get started!')
     $('#create-bicycle-form').show()
   } else {
-    $('#message').text('Showing all bicycles')
+    $('#message').text('Showing your bicycles')
   }
 }
 

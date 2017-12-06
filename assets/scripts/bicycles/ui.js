@@ -21,11 +21,6 @@ const getBicyclesSuccess = function (data) {
   $('#register-form').off('submit')
   $('.register-stolen').off('click')
   store.data = data
-  if (store.data.bicycles.length < 1) {
-    $('#message').text('There are no bikes yet, create one to get started!')
-  } else {
-    $('#message').text('Showing all bicycles')
-  }
   const showBicyclesHtml = showBicyclesTemplate({ bicycles: data.bicycles })
   clear.clearAll()
   $('.display-results').append(showBicyclesHtml)
@@ -33,6 +28,12 @@ const getBicyclesSuccess = function (data) {
   res.remove()
   res.showRecoverStolen()
   res.showRegisterStolen()
+  if (store.data.bicycles.length < 1) {
+    $('#message').text('There are no bikes yet, create one to get started!')
+    $('#create-bicycle-form').show()
+  } else {
+    $('#message').text('Showing all bicycles')
+  }
 }
 
 // display message on get all bicycles success
@@ -40,11 +41,6 @@ const getMyBicyclesSuccess = function (data) {
   $('#register-form').off('submit')
   $('.register-stolen').off('click')
   store.data = data
-  if (store.data.bicycles.length < 1) {
-    $('#message').text('You haven\'t created any bikes yet!')
-  } else {
-    $('#message').text('Your bicycles')
-  }
   const showBicyclesHtml = showBicyclesTemplate({ bicycles: data.bicycles })
   clear.clearAll()
   $('.display-results').append(showBicyclesHtml)
@@ -52,6 +48,12 @@ const getMyBicyclesSuccess = function (data) {
   res.remove()
   res.showRecoverStolen()
   res.showRegisterStolen()
+  if (store.data.bicycles.length < 1) {
+    $('#message').text('There are no bikes yet, create one to get started!')
+    $('#create-bicycle-form').show()
+  } else {
+    $('#message').text('Showing all bicycles')
+  }
 }
 
 // display message on get all bicycles failure

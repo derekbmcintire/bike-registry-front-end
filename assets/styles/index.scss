@@ -85,10 +85,12 @@ ul {
 }
 
 .show-left {
-  line-height: 150px;
+  font-weight: 700;
   margin: 0;
+  max-height: 200px;
   overflow: hidden;
   padding: 0;
+  text-align: center;
   width: 150px;
 }
 

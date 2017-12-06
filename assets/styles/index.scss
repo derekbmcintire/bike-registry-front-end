@@ -46,8 +46,12 @@ ul {
 
 .bike-img {
   width: 100%;
-  display: inline-block;
+}
 
+.bike-img-wrap {
+  display: inline-block;
+  max-height: 150px;
+  overflow: hidden;
 }
 
 .bike-nav {

@@ -70,30 +70,29 @@ const showRegisterStolen = function () {
     authUi.clearAll()
     store.updateId = $(event.target).parent().parent().data('id')
     $('#bike_id').val(store.updateId)
-    // looks through the stored bicycles and returns the current bicycle
-    // const findCurrentBike = function () {
-    //   return store.data.bicycles.find((bike) => {
-    //     return bike.id === store.updateId
-    //   })
-    // }
-    // ...
     $('#register-form').show()
     $('#register-form').on('submit', onRegisterStolen)
   })
 }
 
 // deletes a bicycle from the database
-const onRecoverBicycle = function () {
-  api.recoverBicycle()
-    .then(ui.recoverBicycleSuccess)
-    .catch(ui.recoverBicycleFailure)
+const onRecoverStolen = function () {
+  event.preventDefault()
+  $('#recover-form').hide()
+  const data = getFormFields(event.target)
+  api.recoverStolen(data)
+    .then(ui.recoverStolenSuccess)
+    .catch(ui.recoverStolenFailure)
 }
 
 // recovers a bicycle and deletes stolen event
-const recover = function () {
+const showRecoverStolen = function () {
   $('.recover').on('click', () => {
+    authUi.clearAll()
     store.updateId = $(event.target).parent().parent().data('id')
-    onRecoverBicycle()
+    $('#r_bike_id').val(store.updateId)
+    $('#recover-form').show()
+    $('#recover-form').on('submit', onRecoverStolen)
   })
 }
 
@@ -103,5 +102,5 @@ module.exports = {
   onUpdateBicycle,
   showUpdateBicycle,
   showRegisterStolen,
-  recover
+  showRecoverStolen
 }

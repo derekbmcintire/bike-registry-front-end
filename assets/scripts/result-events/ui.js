@@ -32,14 +32,14 @@ const registerStolenFailure = function () {
   $('#message').text('Error on bike registration')
 }
 
-const recoverBicycleSuccess = function () {
-  authUi.clearAll()
-  $('#register-form').off('submit')
-  $('.register-stolen').off('click')
+const recoverStolenSuccess = function () {
+  $('#recover-form').off('submit')
+  $('.recover').off('click')
+  $('#r_event-location').val('')
   $('#message').text('Bicycle status recovered!')
 }
 
-const recoverBicycleFailure = function () {
+const recoverStolenFailure = function () {
   $('#message').text('Error updating bicycle status')
 }
 
@@ -50,6 +50,6 @@ module.exports = {
   updateBicycleFailure,
   registerStolenSuccess,
   registerStolenFailure,
-  recoverBicycleSuccess,
-  recoverBicycleFailure
+  recoverStolenSuccess,
+  recoverStolenFailure
 }

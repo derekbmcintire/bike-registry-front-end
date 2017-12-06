@@ -17,6 +17,7 @@ $(() => {
   $('#create-bicycle-form').hide()
   $('#update-bicycle-form').hide()
   $('#register-form').hide()
+  $('#recover-form').hide()
 })
 
 // use require with a reference to bundle the file and use it in this file

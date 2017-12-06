@@ -59,10 +59,10 @@
       <!-- left nav -->
       <nav class="left col-xs-3">
         <h3>Bikes</h3>
-          <button class="bike-nav" id="show-my-bikes">My Bikes</button>
-          <button class="bike-nav" id='show-all-bikes'>All Bikes</button>
-          <button class="bike-nav" id='show-stolen-bikes'>All Stolen Bikes</button>
-          <button class="bike-nav" id='show-create-form'>New Bike</button>
+        <button class="bike-nav" id="show-my-bikes">My Bikes</button>
+        <button class="bike-nav" id='show-all-bikes'>All Bikes</button>
+        <button class="bike-nav" id='show-stolen-bikes'>All Stolen Bikes</button>
+        <button class="bike-nav" id='show-create-form'>New Bike</button>
       </nav>
 
       <!-- right display section -->
@@ -99,10 +99,20 @@
 
         <form id="register-form">
           <fieldset>
-            <legend class='heading'>Register Stolen</legend>
+            <legend class='heading'>Register bike as stolen</legend>
             <input type="hidden" name="event[event_type]" value="stolen">
             <input id="bike_id" type="hidden" name="event[bicycle_id]">
             <input type="text" id="event-location" name="event[location]" placeholder="Location">
+            <input type="submit" name="submit" value="Register">
+          </fieldset>
+        </form>
+
+        <form id="recover-form">
+          <fieldset>
+            <legend class='heading'>Register bike as recovered</legend>
+            <input type="hidden" name="event[event_type]" value="recovered">
+            <input id="r_bike_id" type="hidden" name="event[bicycle_id]">
+            <input type="text" id="r_event-location" name="event[location]" placeholder="Location">
             <input type="submit" name="submit" value="Register">
           </fieldset>
         </form>

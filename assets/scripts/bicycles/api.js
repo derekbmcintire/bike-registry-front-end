@@ -70,24 +70,16 @@ const registerStolen = function (data) {
     data
   })
 }
-//
-// const getStolenBicycles = function () {
-//   return $.ajax({
-//     url: config.apiOrigin + '/bicycles/stolen',
-//     method: 'GET',
-//     headers: {
-//       Authorization: 'Token token=' + store.user.token
-//     }
-//   })
-// }
 
-const recoverBicycle = function () {
+const recoverStolen = function (data) {
+  console.log('recover data: ' + data.event.bicycle_id + data.event.event_type + data.event.location)
   return $.ajax({
-    url: config.apiOrigin + '/bicycles/recover/' + store.updateId,
-    method: 'DELETE',
+    url: config.apiOrigin + '/events',
+    method: 'POST',
     headers: {
       Authorization: 'Token token=' + store.user.token
-    }
+    },
+    data
   })
 }
 
@@ -99,5 +91,5 @@ module.exports = {
   getMyBicycles,
   registerStolen,
   // getStolenBicycles,
-  recoverBicycle
+  recoverStolen
 }

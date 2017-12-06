@@ -31,7 +31,7 @@ const getBicyclesSuccess = function (data) {
   $('.display-results').append(showBicyclesHtml)
   res.showUpdateBicycle()
   res.remove()
-  res.recover()
+  res.showRecoverStolen()
   res.showRegisterStolen()
 }
 
@@ -51,7 +51,7 @@ const getStolenBicyclesSuccess = function (data) {
   $('.display-results').append(showBicyclesHtml)
   res.showUpdateBicycle()
   res.remove()
-  res.recover()
+  res.showRecoverStolen()
   res.showRegisterStolen()
 }
 

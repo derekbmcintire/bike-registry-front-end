@@ -18,6 +18,8 @@ const createBicycleFailure = function () {
 
 // display message on get all bicycles success
 const getBicyclesSuccess = function (data) {
+  $('#register-form').off('submit')
+  $('.register-stolen').off('click')
   store.data = data
   if (store.data.bicycles.length < 1) {
     $('#message').text('You haven\'t created any bikes yet!')

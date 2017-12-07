@@ -1,6 +1,6 @@
 $icon-font-path: '~bootstrap-sass/assets/fonts/bootstrap/';
 @import '~bootstrap-sass/assets/stylesheets/bootstrap';
-@import url('https://fonts.googleapis.com/css?family=Architects+Daughter');
+@import url('https://fonts.googleapis.com/css?family=Oswald:500');
 @import url('https://fonts.googleapis.com/css?family=Barlow+Condensed:400,700');
 
 .search-form {
@@ -8,13 +8,19 @@ $icon-font-path: '~bootstrap-sass/assets/fonts/bootstrap/';
 }
 
 body {
-  background-color: #C1E1A6;
+  background-color: #bfcbdb;
   font-family: 'Barlow Semi Condensed', sans-serif;
+  margin: 0;
+  padding: 0;
 }
 
 h1 {
-  font-family: 'Architects Daughter', sans-serif;
+  font-family: 'Oswald', sans-serif;
+  color: black;
   font-weight: bold;
+  font-size: 55px;
+  margin: 0;
+  margin-bottom: -10px;
 }
 
 button {
@@ -64,6 +70,16 @@ p {
   margin: 2px;
 }
 
+.form-control {
+  margin: 3px;
+}
+
+.header {
+  background-image: url("https://c1.staticflickr.com/5/4538/24947748578_fd59bedcb5_o.jpg");
+  background-size: cover;
+  background-position: center;
+  height: 35vh;
+}
 
 .loader {
   width: 75px;
@@ -72,6 +88,7 @@ p {
 
 .lower {
   margin: 5px;
+  padding: 20px;
 }
 
 .main {
@@ -85,7 +102,6 @@ p {
 }
 
 .right {
-  height: 70vh;
   overflow: auto;
 }
 
@@ -101,9 +117,8 @@ p {
 
 .sign-in-up {
   margin: 0 auto;
-  padding: 40px;
   text-align: center;
-  max-width: 700px;
+  max-width: 400px;
   width: 80%;
 }
 

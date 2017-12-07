@@ -72,10 +72,11 @@ p {
   margin: 2px;
   outline: none;
   width: 145px;
-  &:hover, &:focus, &:active, {
+  &:hover, &:focus, &:active {
     background-color: white;
     color: black;
-    outline: none;
+    outline: none !important;
+    box-shadow: none;
   }
 }
 
@@ -94,7 +95,7 @@ p {
 }
 
 .header {
-  background-image: url("https://c1.staticflickr.com/5/4538/24947748578_fd59bedcb5_o.jpg");
+  background-image: url("https://c1.staticflickr.com/5/4532/25025750458_997c28b584_o.jpg");
   background-size: cover;
   background-position: center;
   height: 35vh;
@@ -146,7 +147,6 @@ p {
 .sign-in-up {
   margin: 0 auto;
   text-align: center;
-  max-width: 400px;
   width: 80%;
 }
 

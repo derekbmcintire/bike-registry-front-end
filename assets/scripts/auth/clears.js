@@ -48,6 +48,7 @@ const clearAll = function () {
   $('#bike-search').val('')
   $('#register-form').hide()
   $('#recover-form').hide()
+  $('.message').html('')
 }
 
 module.exports = {

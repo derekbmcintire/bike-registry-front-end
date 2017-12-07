@@ -38,8 +38,8 @@ const getBicyclesSuccess = function (data) {
 
 // display message on get all bicycles success
 const getMyBicyclesSuccess = function (data) {
-  $('#register-form').off('submit')
-  $('.register-stolen').off('click')
+  // $('#register-form').off('submit')
+  // $('.register-stolen').off('click')
   store.data = data
   const showBicyclesHtml = showBicyclesTemplate({ bicycles: data.bicycles })
   clear.clearAll()
@@ -62,21 +62,23 @@ const getBicyclesFailure = function () {
 }
 
 const getStolenBicyclesSuccess = function (data) {
-  store.data = data.bicycles.filter((bike) => {
+  store.data.bicycles = data.bicycles.filter((bike) => {
     return bike.stolen === true
   })
+  const showBicyclesHtml = showBicyclesTemplate({ bicycles: store.data.bicycles })
+  clear.clearAll()
+  $('.display-results').append(showBicyclesHtml)
+
+  res.remove()
+  res.showRecoverStolen()
+  res.showRegisterStolen()
   if (store.data.length < 1) {
     $('#message').text('No stolen bikes!')
   } else {
     $('#message').text('Showing stolen bikes')
   }
-  const showBicyclesHtml = showBicyclesTemplate({ bicycles: store.data })
-  clear.clearAll()
-  $('.display-results').append(showBicyclesHtml)
   res.showUpdateBicycle()
-  res.remove()
-  res.showRecoverStolen()
-  res.showRegisterStolen()
+  console.log(store.data)
 }
 
 // search all bicycles for search parameters

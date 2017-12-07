@@ -43,13 +43,16 @@ const showUpdateBicycle = function () {
         return bike.id === store.updateId
       })
     }
+    const updateFields = function () {
+      $('#update-make').val(findCurrentBike().make)
+      $('#update-model').val(findCurrentBike().model)
+      $('#update-color').val(findCurrentBike().color)
+      $('#update-number').val(findCurrentBike().serial_number)
+      $('#update-size').val(findCurrentBike().size)
+      $('#update-url').val(findCurrentBike().url)
+    }
     // sets default value of form fields to the bicycles values
-    $('#update-make').val(findCurrentBike().make)
-    $('#update-model').val(findCurrentBike().model)
-    $('#update-color').val(findCurrentBike().color)
-    $('#update-number').val(findCurrentBike().serial_number)
-    $('#update-size').val(findCurrentBike().size)
-    $('#update-url').val(findCurrentBike().url)
+    updateFields()
     $('#update-bicycle-form').show()
     $('#update-bicycle-form').on('submit', onUpdateBicycle)
   })

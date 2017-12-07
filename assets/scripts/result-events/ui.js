@@ -7,7 +7,7 @@ const deleteBicycleSuccess = function () {
 
 // display message for delete bicycle failure
 const deleteBicycleFailure = function () {
-  $('#message').text('You don not have permission to delete this bike!')
+  $('#message').text('You do not have permission to delete this bike!')
 }
 
 // display message for update bicycle success

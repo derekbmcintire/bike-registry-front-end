@@ -42,16 +42,20 @@
   <!-- main div -->
   <main class="main">
     <!-- top nav -->
-    <nav class="top">
-      <h4 id="display-email"></h4>
+    <nav class="top row">
+      <div class="col-xs-4 tops">
+
+    </div>
+
+    <div class="col-xs-8 tops text-right">
       <!-- find a bicycle by id form -->
       <form id="search-form" class="search-form">
         <fieldset>
-          <input class="form-control" type="text" id="bike-search" placeholder="Search">
+          <input class="form-control sub-header" type="text" id="bike-search" placeholder="Search">
         </fieldset>
       </form>
-      <button id="sign-out">Sign Out</button>
-      <button id="show-change-pw">Change Password</button>
+    </div>
+
     </nav>
 
     <!-- lower section -->
@@ -59,10 +63,17 @@
 
       <!-- left nav -->
       <nav class="left col-md-3">
-        <button class="bike-nav" id="show-my-bikes">My Bikes</button>
-        <button class="bike-nav" id='show-all-bikes'>All Bikes</button>
-        <button class="bike-nav" id='show-stolen-bikes'>All Stolen Bikes</button>
-        <button class="bike-nav" id='show-create-form'>New Bike</button>
+        <h4 id="display-email"></h4>
+        <div>
+        <button class="btn btn-dark bike-nav" id="show-my-bikes">My Bikes</button>
+        <button class="btn btn-dark bike-nav" id='show-all-bikes'>All Bikes</button>
+        <button class="btn btn-dark bike-nav" id='show-stolen-bikes'>All Stolen Bikes</button>
+      </div>
+      <div>
+        <button class="btn btn-dark bike-nav" id='show-create-form'>New Bike</button>
+        <button class="btn btn-dark bike-nav" id="sign-out">Sign Out</button>
+        <button class="btn btn-dark bike-nav" id="show-change-pw">Change Password</button>
+      </div>
       </nav>
 
       <!-- right display section -->

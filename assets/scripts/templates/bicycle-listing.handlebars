@@ -20,12 +20,12 @@
 
   <div class="col-xs-3 status">
     {{#if bicycle.editable}}
-      <button class="show-update-form">Update</button>
-      <button class="remove">Remove</button>
+      <button class="btn btn-secondary bike-nav show-update-form">Update</button>
+      <button class="btn btn-secondary bike-nav remove">Remove</button>
         {{#if bicycle.stolen}}
-          <button class="recover">Bike was recovered</button>
+          <button class="btn btn-secondary bike-nav recover">Bike was recovered</button>
         {{else}}
-          <button class="register-stolen">Bike was stolen</button>
+          <button class="btn btn-secondary bike-nav register-stolen">Bike was stolen</button>
         {{/if}}
         {{else}}
         <!-- <button class="found">I found this bike</button> -->

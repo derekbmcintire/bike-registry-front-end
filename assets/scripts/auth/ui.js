@@ -22,7 +22,7 @@ const signUpFailure = function () {
 const signInSuccess = function (data) {
   $('.loader-container').remove()
   store.user = data.user
-  $('#display-email').text('signed-in as: ' + store.user.email)
+  $('#display-email').text(store.user.email)
   $('#message-top').text('')
   $('#message').text('You have signed in successfully')
   clear.clearSignIn()

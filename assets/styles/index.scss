@@ -70,10 +70,12 @@ p {
   background-color: grey;
   border-radius: 0;
   margin: 2px;
+  outline: none;
   width: 145px;
-  &:hover, &:focus {
+  &:hover, &:focus, &:active, {
     background-color: white;
     color: black;
+    outline: none;
   }
 }
 
@@ -81,19 +83,25 @@ p {
   color: black;
   background-color: transparent;
     &:hover, &:focus {
-      border: 2px solid grey;
+      background-color: grey;
+      color: white;
     }
 }
 
-// .form-control {
-//   margin: 3px;
-// }
+.form-control {
+  margin: 3px auto;
+  width: 200px;
+}
 
 .header {
   background-image: url("https://c1.staticflickr.com/5/4538/24947748578_fd59bedcb5_o.jpg");
   background-size: cover;
   background-position: center;
   height: 35vh;
+}
+
+.left {
+  margin-bottom: 15px;
 }
 
 .loader {
@@ -111,7 +119,7 @@ p {
   min-width: 550px;
   max-width: 1000px;
   padding: 5px;
-  width: 80%;
+  width: 95%;
 }
 .message {
   text-align: center;
@@ -164,6 +172,5 @@ p {
   }
   .main {
     text-align: center;
-    width: 95%;
   }
 }

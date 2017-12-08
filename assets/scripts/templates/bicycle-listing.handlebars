@@ -2,7 +2,12 @@
 
 <div class="bicycles row" data-id="{{bicycle.id}}">
   <div class="show-left col-xs-4">
+    <div class="bike-img-wrap">
     <img class="bike-img" src={{bicycle.url}}>
+    </div>
+    {{#if bicycle.stolen}}
+      <h4 class='stolen-label'>STOLEN</h4>
+    {{/if}}
   </div>
   <div class="show-right col-xs-5">
       <p><span class="attribute">Make:</span> {{bicycle.make}}</p>
@@ -12,12 +17,21 @@
       <p><span class="attribute">Size:</span> {{bicycle.size}}</p>
   </div>
 
-{{#if bicycle.editable}}
-  <div class="col-xs-3">
-    <button class="show-update-form">Update</button>
-    <button class="remove">Remove</button>
+
+  <div class="col-xs-3 status">
+    {{#if bicycle.editable}}
+      <button class="btn btn-secondary bike-nav show-update-form">Update</button>
+      <button class="btn btn-secondary bike-nav remove">Remove</button>
+        {{#if bicycle.stolen}}
+          <button class="btn btn-secondary bike-nav recover">Bike was recovered</button>
+        {{else}}
+          <button class="btn btn-secondary bike-nav register-stolen">Bike was stolen</button>
+        {{/if}}
+        {{else}}
+        <!-- <button class="found">I found this bike</button> -->
+    {{/if}}
   </div>
-{{/if}}
+
 
 </div>
 

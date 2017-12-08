@@ -1,63 +1,19 @@
 'use strict'
 const store = require('../store')
-
-// clear sign up forms
-const clearSignUp = function () {
-  $('#sign-up-email').val('')
-  $('#sign-up-password').val('')
-  $('#sign-up-password-confirm').val('')
-}
-
-// clear sign in fields, hide sign in/up forms and show main div
-const clearSignIn = function () {
-  $('.sign-in-up').hide()
-  $('#sign-in-email').val('')
-  $('#sign-in-password').val('')
-  $('#sign-up-email').val('')
-  $('#sign-up-password').val('')
-  $('#sign-up-password-confirm').val('')
-  $('.main').show()
-}
-
-// clear create bicycle fields and forms
-const clearCreateBicycle = function () {
-  $('#bicycle-make').val('')
-  $('#bicycle-model').val('')
-  $('#bicycle-color').val('')
-  $('#serial-number').val('')
-  $('#bicycle-size').val('')
-  $('#bicycle-url').val('')
-  $('#create-bicycle-form').hide()
-}
-
-// clear update bicycle fields and forms
-const clearUpdateBicycle = function () {
-  $('#update-make').val('')
-  $('#update-model').val('')
-  $('#update-color').val('')
-  $('#update-number').val('')
-  $('#update-size').val('')
-  $('#update-url').val('')
-  $('#update-bicycle-form').hide()
-}
-
-// clear all forms and results
-const clearAll = function () {
-  clearCreateBicycle()
-  clearUpdateBicycle()
-  $('.display-results').html('')
-  $('#bike-search').val('')
-}
+const clear = require('./clears')
+const bicycles = require('../bicycles/events')
 
 // display message on sign up success
 const signUpSuccess = function (data) {
+  clear.clearAll()
   $('.loader-container').remove()
   $('#sign-message').text('You signed-up successfully!')
-  clearSignUp()
+  clear.clearSignUp()
 }
 
 // display message on sign up failure
 const signUpFailure = function () {
+  clear.clearAll()
   $('.loader-container').remove()
   $('#sign-message').text('Error on sign-up')
 }
@@ -70,12 +26,13 @@ const signInSuccess = function (data) {
   $('#display-email').text(store.user.email)
   $('#message-top').text('')
   $('#message').text('You have signed in successfully')
-  clearSignIn()
-  $('.loader-container').remove()
+  clear.clearSignIn()
+  bicycles.onGetBicycles()
 }
 
 // display message on sign in failure
 const signInFailure = function () {
+  clear.clearAll()
   $('.loader-container').remove()
   $('#sign-message').text('Error on sign in')
 }
@@ -83,14 +40,15 @@ const signInFailure = function () {
 // display message on sign out success
 // hide main div and show sign-in/up form
 const signOutSuccess = function () {
+  clear.clearAll()
   $('#message-top').text('You have signed out successfully')
-  clearAll()
   $('.main').hide()
   $('.sign-in-up').show()
 }
 
 // display message on sign out failure
 const signOutFailure = function () {
+  clear.clearAll()
   $('#message').text('Error signing out')
 }
 
@@ -98,7 +56,7 @@ const signOutFailure = function () {
 // hide change password form
 // show main div
 const changePasswordSuccess = function (data) {
-  $('#message-top').text('')
+  clear.clearAll()
   $('#message').text('Changed password successfully')
   $('#change-pw-container').hide()
   $('#old-password').val('')
@@ -108,7 +66,10 @@ const changePasswordSuccess = function (data) {
 
 // display a message on change password failure
 const changePasswordFailure = function (data) {
-  $('#message-top').text('Error changing password')
+  $('#message-top').text('Password not changed')
+  setTimeout(() => {
+    $('#message-top').text('')
+  }, 1500)
 }
 
 module.exports = {
@@ -119,6 +80,5 @@ module.exports = {
   signOutSuccess,
   signOutFailure,
   changePasswordSuccess,
-  changePasswordFailure,
-  clearAll
+  changePasswordFailure
 }

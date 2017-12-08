@@ -1,6 +1,6 @@
 $icon-font-path: '~bootstrap-sass/assets/fonts/bootstrap/';
 @import '~bootstrap-sass/assets/stylesheets/bootstrap';
-@import url('https://fonts.googleapis.com/css?family=Architects+Daughter');
+@import url('https://fonts.googleapis.com/css?family=Oswald:500');
 @import url('https://fonts.googleapis.com/css?family=Barlow+Condensed:400,700');
 
 .search-form {
@@ -8,26 +8,34 @@ $icon-font-path: '~bootstrap-sass/assets/fonts/bootstrap/';
 }
 
 body {
-  background-color: #C1E1A6;
+  background-color: #bfcbdb;
   font-family: 'Barlow Semi Condensed', sans-serif;
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  overflow-x: hidden;
 }
 
 h1 {
-  font-family: 'Architects Daughter', sans-serif;
+  font-family: 'Oswald', sans-serif;
+  color: white;
   font-weight: bold;
+  font-size: 55px;
+  margin: -70px;
+  text-align: center;
+  margin-bottom: 20px;
 }
 
-button {
-  background-color: transparent;
-  border: none;
-  color: #585858;
-  &:hover {
-    outline: 2px solid #118C4E;
-  }
+h4 {
+  margin: 0;
 }
 
 ul {
   list-style-type: none;
+}
+
+p {
+  margin: 0;
 }
 
 .attribute {
@@ -46,12 +54,64 @@ ul {
 
 .bike-img {
   width: 100%;
+}
+
+.bike-img-wrap {
   display: inline-block;
+  height: 100px;
+  overflow: hidden;
+  width: 100px;
+}
+
+.btn {
+  color: white;
+  background-color: grey;
+  border-radius: 0;
+  margin: 2px;
+  outline: none;
+  width: 145px;
+  &:hover, &:focus, &:active {
+    background-color: white;
+    color: black;
+    outline: none !important;
+    box-shadow: none;
+  }
+}
+
+.btn-secondary {
+  color: black;
+  background-color: transparent;
+    &:hover, &:focus {
+      background-color: grey;
+      color: white;
+    }
 }
 
 .bike-nav {
+  border-radius: 2px 0 0 6px;
   display: block;
-  margin: 2px;
+}
+.pw-container {
+  text-align: auto;
+  margin: 0 auto;
+  border: 1px solid black;
+}
+
+.form-control {
+  margin: 3px auto;
+  width: 200px;
+}
+
+.header {
+  background-image: url("https://c1.staticflickr.com/5/4532/25025750458_997c28b584_o.jpg");
+  background-size: cover;
+  background-position: center;
+  height: 35vh;
+  width: 100%;
+}
+
+.left {
+  margin-bottom: 15px;
 }
 
 .loader {
@@ -61,41 +121,65 @@ ul {
 
 .lower {
   margin: 5px;
+  padding: 20px;
 }
 
 .main {
   margin: 0 auto;
-  min-width: 645px;
   max-width: 1000px;
-  width: 80%;
+  padding: 5px;
+  width: 95%;
 }
 .message {
   text-align: center;
 }
 
 .right {
-  height: 530px;
   overflow: auto;
 }
 
-.show-left {
-  background-color: white;
-  border: 1px solid #118C4E;
-  height: 150px;
-  line-height: 150px;
+.search-form {
   margin: 0;
+}
+
+.show-left {
+  font-weight: 700;
+  margin: 0;
+  max-height: 200px;
+  overflow: hidden;
   padding: 0;
+  text-align: center;
   width: 150px;
 }
 
 .sign-in-up {
   margin: 0 auto;
-  padding: 40px;
   text-align: center;
-  max-width: 700px;
   width: 80%;
+  max-width: 800px;
 }
 
-.title {
+.status {
   text-align: center;
+}
+
+.stolen-label {
+  margin: 0;
+}
+
+.top {
+  text-align: center;
+}
+
+.top-left {
+  text-align: left;
+}
+
+@media (max-width: 991px) {
+  .bike-nav {
+    display: inline-block;
+  }
+  .main {
+    text-align: center;
+  }
 }

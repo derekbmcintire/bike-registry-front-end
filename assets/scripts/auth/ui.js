@@ -22,6 +22,7 @@ const signUpFailure = function () {
 // save user data in store
 // hide sign in form and show main div
 const signInSuccess = function (data) {
+  $('.loader-container').remove()
   store.user = data.user
   $('#display-email').text(store.user.email)
   $('#message-top').text('')

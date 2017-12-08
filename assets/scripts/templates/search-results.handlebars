@@ -2,7 +2,12 @@
 
 <div class="bicycles row" data-id="{{this.id}}">
   <div class="show-left col-xs-4">
+    <div class="bike-img-wrap">
     <img class="bike-img" src={{this.url}}>
+  </div>
+  {{#if this.stolen}}
+    <h4 class='stolen-label'>STOLEN</h4>
+  {{/if}}
   </div>
   <div class="show-right col-xs-5">
     <ul>

@@ -5,6 +5,7 @@ const bicycles = require('../bicycles/events')
 
 // display message on sign up success
 const signUpSuccess = function (data) {
+  clear.clearAll()
   $('.loader-container').remove()
   $('#sign-message').text('You signed-up successfully!')
   clear.clearSignUp()
@@ -12,6 +13,7 @@ const signUpSuccess = function (data) {
 
 // display message on sign up failure
 const signUpFailure = function () {
+  clear.clearAll()
   $('.loader-container').remove()
   $('#sign-message').text('Error on sign-up')
 }
@@ -38,8 +40,8 @@ const signInFailure = function () {
 // display message on sign out success
 // hide main div and show sign-in/up form
 const signOutSuccess = function () {
-  $('#message-top').text('You have signed out successfully')
   clear.clearAll()
+  $('#message-top').text('You have signed out successfully')
   $('.main').hide()
   $('.sign-in-up').show()
 }
@@ -63,7 +65,7 @@ const changePasswordSuccess = function (data) {
 
 // display a message on change password failure
 const changePasswordFailure = function (data) {
-  $('#message-top').text('Error changing password')
+  $('#message-top').text('Password not changed')
 }
 
 module.exports = {

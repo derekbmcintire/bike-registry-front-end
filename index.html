@@ -18,7 +18,7 @@
   </div>
   <!-- Title and Message -->
   <h1 class="title">SpokeRetriever</h1>
-  <h4 id="message-top" class="message"></h4>
+  <h4 id="message-top" class="message">A community resource for getting your bike back.</h4>
 
   <!-- Sign in - up container -->
   <div class="sign-in-up">
@@ -26,17 +26,18 @@
   </div>
 
   <!-- change password container -->
-  <div id="change-pw-container">
+  <div id="change-pw-container" class="col-sm-12">
     <!-- change password form -->
     <form id="change-password">
-      <fieldset>
+      <fieldset class="text-center">
         <h3 class='heading'>Change Password</h3>
         <input class="form-control" id="old-password" type="password" name="passwords[old]" placeholder="Old Password">
         <input class="form-control" id="new-password" type="password" name="passwords[new]" placeholder="New Password">
-        <input class="btn btn-light" type="submit" name="submit" value="Change Password">
+        <input class="btn btn-light" type="submit" name="submit" value="Change Password"><br />
+        <button id="abort-change-pw" class="btn btn-light">Go back</button>
       </fieldset>
     </form>
-    <button id="abort-change-pw">Go back</button>
+
   </div>
 
   <!-- main div -->
@@ -44,7 +45,7 @@
     <!-- top nav -->
     <nav class="top row">
       <div class="col-xs-4 top-left">
-        <h5 id="display-email"></h5>
+        <h5>Signed in as: <span id="display-email"></span></h5>
     </div>
 
     <div class="col-xs-8 tops text-right">
@@ -79,36 +80,36 @@
       <section class="right col-md-9">
 
         <h4 id="message" class="message"></h4>
-
+        <br />
         <!-- create bicycle form -->
         <form id="create-bicycle-form">
-          <fieldset>
+          <fieldset class="text-center">
             <h3 class='heading'>Create New Bike</h3>
             <input class="form-control" type="text" id="bicycle-make" name="bicycle[make]" placeholder="Make">
             <input class="form-control" type="text" id="bicycle-model" name="bicycle[model]" placeholder="Model">
-            <input class="form-control" type="text" id="bicycle-color" name="bicycle[color]" placeholder="color">
-            <input class="form-control" type="text" id="serial-number" name="bicycle[serial_number]" placeholder="serial number">
-            <input class="form-control" type="text" id="bicycle-size" name="bicycle[size]" placeholder="size">
+            <input class="form-control" type="text" id="bicycle-color" name="bicycle[color]" placeholder="Color">
+            <input class="form-control" type="text" id="serial-number" name="bicycle[serial_number]" placeholder="Serial Number">
+            <input class="form-control" type="text" id="bicycle-size" name="bicycle[size]" placeholder="Size">
             <input class="form-control" type="text" id="bicycle-url" name="bicycle[url]" placeholder="URL">
             <input class="btn btn-light" type="submit" name="submit" value="Create Bicycle">
           </fieldset>
         </form>
 
         <form id="update-bicycle-form">
-          <fieldset>
+          <fieldset class="text-center">
             <h3 class='heading'>Update Bike</h3>
             <input class="form-control" type="text" id="update-make" name="bicycle[make]" placeholder="Make">
             <input class="form-control" type="text" id="update-model" name="bicycle[model]" placeholder="Model">
-            <input class="form-control" type="text" id="update-color" name="bicycle[color]" placeholder="color">
-            <input class="form-control" type="text" id="update-number" name="bicycle[serial_number]" placeholder="serial number">
-            <input class="form-control" type="text" id="update-size" name="bicycle[size]" placeholder="size">
+            <input class="form-control" type="text" id="update-color" name="bicycle[color]" placeholder="Color">
+            <input class="form-control" type="text" id="update-number" name="bicycle[serial_number]" placeholder="Serial Number">
+            <input class="form-control" type="text" id="update-size" name="bicycle[size]" placeholder="Size">
             <input class="form-control" type="text" id="update-url" name="bicycle[url]" placeholder="URL">
             <input class="btn btn-light" type="submit" name="submit" value="Update Bicycle">
           </fieldset>
         </form>
 
         <form id="register-form">
-          <fieldset>
+          <fieldset class="text-center">
             <h3 class='heading'>Register bike as stolen</h3>
             <input type="hidden" name="event[event_type]" value="stolen">
             <input id="bike_id" type="hidden" name="event[bicycle_id]">
@@ -118,7 +119,7 @@
         </form>
 
         <form id="recover-form">
-          <fieldset>
+          <fieldset class="text-center">
             <h3 class='heading'>Register bike as recovered</h3>
             <input type="hidden" name="event[event_type]" value="recovered">
             <input id="r_bike_id" type="hidden" name="event[bicycle_id]">

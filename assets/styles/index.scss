@@ -91,6 +91,16 @@ p {
     }
 }
 
+.pw-container {
+  text-align: auto;
+  margin: 0 auto;
+  border: 1px solid black;
+}
+
+.fuck {
+  text-align: center;
+}
+
 .form-control {
   margin: 3px auto;
   width: 200px;
@@ -151,6 +161,7 @@ p {
   margin: 0 auto;
   text-align: center;
   width: 80%;
+  max-width: 800px;
 }
 
 .status {

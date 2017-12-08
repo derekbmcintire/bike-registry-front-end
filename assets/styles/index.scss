@@ -85,6 +85,7 @@ p {
 .btn-secondary {
   color: black;
   background-color: transparent;
+  width: 125px;
     &:hover, &:focus {
       background-color: grey;
       color: white;
@@ -95,10 +96,6 @@ p {
   text-align: auto;
   margin: 0 auto;
   border: 1px solid black;
-}
-
-.fuck {
-  text-align: center;
 }
 
 .form-control {
@@ -130,7 +127,6 @@ p {
 
 .main {
   margin: 0 auto;
-  min-width: 550px;
   max-width: 1000px;
   padding: 5px;
   width: 95%;

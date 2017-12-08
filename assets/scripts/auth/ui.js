@@ -33,6 +33,7 @@ const signInSuccess = function (data) {
 
 // display message on sign in failure
 const signInFailure = function () {
+  clear.clearAll()
   $('.loader-container').remove()
   $('#sign-message').text('Error on sign in')
 }
@@ -48,6 +49,7 @@ const signOutSuccess = function () {
 
 // display message on sign out failure
 const signOutFailure = function () {
+  clear.clearAll()
   $('#message').text('Error signing out')
 }
 
@@ -55,7 +57,7 @@ const signOutFailure = function () {
 // hide change password form
 // show main div
 const changePasswordSuccess = function (data) {
-  $('#message-top').text('')
+  clear.clearAll()
   $('#message').text('Changed password successfully')
   $('#change-pw-container').hide()
   $('#old-password').val('')
@@ -66,6 +68,9 @@ const changePasswordSuccess = function (data) {
 // display a message on change password failure
 const changePasswordFailure = function (data) {
   $('#message-top').text('Password not changed')
+  setTimeout(() => {
+    $('#message-top').text('')
+  }, 1500)
 }
 
 module.exports = {

@@ -63,10 +63,6 @@ p {
   width: 100px;
 }
 
-.bike-nav {
-  display: block;
-}
-
 .btn {
   color: white;
   background-color: grey;
@@ -91,6 +87,10 @@ p {
     }
 }
 
+.bike-nav {
+  border-radius: 2px 0 0 6px;
+  display: block;
+}
 .pw-container {
   text-align: auto;
   margin: 0 auto;

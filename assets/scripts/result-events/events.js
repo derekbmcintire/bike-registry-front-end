@@ -10,7 +10,6 @@ const clear = require('../auth/clears')
 const remove = function () {
   $('.remove').on('click', () => {
     store.updateId = $(event.target).parent().parent().data('id')
-    console.log(store.updateId)
     onDeleteBicycle()
     $(event.target).parent().parent().hide()
   })
@@ -63,7 +62,6 @@ const onRegisterStolen = function () {
   event.preventDefault()
   $('#register-form').hide()
   const data = getFormFields(event.target)
-  console.log('onRegisterStolen: ' + data)
   api.registerStolen(data)
     .then(ui.registerStolenSuccess)
     .catch(ui.registerStolenFailure)

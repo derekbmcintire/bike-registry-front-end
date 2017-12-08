@@ -78,7 +78,6 @@ const getStolenBicyclesSuccess = function (data) {
     $('#message').text('Showing stolen bikes')
   }
   res.showUpdateBicycle()
-  console.log(store.data)
 }
 
 // search all bicycles for search parameters

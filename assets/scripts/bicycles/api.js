@@ -60,7 +60,6 @@ const updateBicycle = function (data) {
 }
 
 const registerStolen = function (data) {
-  console.log(data)
   return $.ajax({
     url: config.apiOrigin + '/events',
     method: 'POST',
@@ -72,7 +71,6 @@ const registerStolen = function (data) {
 }
 
 const recoverStolen = function (data) {
-  console.log('recover data: ' + data.event.bicycle_id + data.event.event_type + data.event.location)
   return $.ajax({
     url: config.apiOrigin + '/events',
     method: 'POST',

@@ -49,7 +49,7 @@ const getMyBicyclesSuccess = function (data) {
   res.showRecoverStolen()
   res.showRegisterStolen()
   if (store.data.bicycles.length < 1) {
-    $('#message').text('There are no bikes yet, create one to get started!')
+    $('#message').text('You have no bikes yet, create one to get started!')
     $('#create-bicycle-form').show()
   } else {
     $('#message').text('Showing your bicycles')

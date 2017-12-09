@@ -8,7 +8,7 @@ $icon-font-path: '~bootstrap-sass/assets/fonts/bootstrap/';
 }
 
 body {
-  background-color: #bfcbdb;
+  background-color: #F0F8FF;
   font-family: 'Barlow Semi Condensed', sans-serif;
   margin: 0;
   padding: 0;
@@ -43,11 +43,12 @@ p {
 }
 
 .bicycles {
+  background-color: white;
   border-top: 1px solid #118C4E;
   margin-top: 5px;
   padding: 5px;
   &:hover {
-    background-color: white;
+    background-color: #DBDBDB;
     border: 0;
   }
 }
@@ -82,7 +83,7 @@ p {
   color: black;
   background-color: transparent;
     &:hover, &:focus {
-      background-color: grey;
+      background-color: #DBDBDB;
       color: white;
     }
 }
@@ -103,7 +104,7 @@ p {
 }
 
 .header {
-  background-image: url("https://c1.staticflickr.com/5/4532/25025750458_997c28b584_o.jpg");
+  background-image: url("http://mypixa.com/images/2016/04/06/GreenBicycleontheFoothpathatCityNight-FreeStockPhoto.jpg");
   background-size: cover;
   background-position: center;
   height: 35vh;
@@ -125,10 +126,9 @@ p {
 }
 
 .main {
-  margin: 0 auto;
-  max-width: 1000px;
-  padding: 5px;
-  width: 95%;
+  margin: -10px auto;
+  padding: 15px;
+  width: 100%;
 }
 .message {
   text-align: center;

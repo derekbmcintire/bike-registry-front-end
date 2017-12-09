@@ -45,7 +45,19 @@
     <!-- top nav -->
     <nav class="top row">
       <div class="col-xs-4 top-left">
-        <h5>Signed in as: <span id="display-email"></span></h5>
+        <div class="dropdown menu">
+    <button class="btn btn-dark dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+      Menu
+    </button>
+    <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+      <button class="btn btn-dark bike-nav" id="show-my-bikes">My Bikes</button>
+      <button class="btn btn-dark bike-nav" id='show-all-bikes'>All Bikes</button>
+      <button class="btn btn-dark bike-nav" id='show-stolen-bikes'>All Stolen Bikes</button>
+      <button class="btn btn-dark bike-nav" id='show-create-form'>New Bike</button>
+      <button class="btn btn-dark bike-nav" id="sign-out">Sign Out</button>
+      <button class="btn btn-dark bike-nav" id="show-change-pw">Change Password</button>
+    </div>
+  </div>
     </div>
 
     <div class="col-xs-8 tops text-right">
@@ -63,7 +75,7 @@
     <section class="lower row">
 
       <!-- left nav -->
-      <nav class="left col-md-3">
+      <!-- <nav class="left col-md-3">
         <div>
         <button class="btn btn-dark bike-nav" id="show-my-bikes">My Bikes</button>
         <button class="btn btn-dark bike-nav" id='show-all-bikes'>All Bikes</button>
@@ -74,10 +86,10 @@
         <button class="btn btn-dark bike-nav" id="sign-out">Sign Out</button>
         <button class="btn btn-dark bike-nav" id="show-change-pw">Change Password</button>
       </div>
-      </nav>
+      </nav> -->
 
       <!-- right display section -->
-      <section class="right col-md-9">
+      <section class="right">
 
         <h4 id="message" class="message"></h4>
         <br />

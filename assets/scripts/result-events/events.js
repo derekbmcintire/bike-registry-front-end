@@ -9,9 +9,9 @@ const clear = require('../auth/clears')
 // removes a bicycle from the view
 const remove = function () {
   $('.remove').on('click', () => {
-    store.updateId = $(event.target).parent().parent().data('id')
+    store.updateId = $(event.target).parent().parent().parent().data('id')
     onDeleteBicycle()
-    $(event.target).parent().parent().hide()
+    $(event.target).parent().parent().parent().hide()
   })
 }
 
@@ -36,7 +36,7 @@ const onUpdateBicycle = function () {
 const showUpdateBicycle = function () {
   $('.show-update-form').on('click', () => {
     clear.clearAll()
-    store.updateId = $(event.target).parent().parent().data('id')
+    store.updateId = $(event.target).parent().parent().parent().data('id')
     // looks through the stored bicycles and returns the current bicycle
     const findCurrentBike = function () {
       return store.data.bicycles.find((bike) => {
@@ -70,7 +70,7 @@ const onRegisterStolen = function () {
 const showRegisterStolen = function () {
   $('.register-stolen').on('click', () => {
     clear.clearAll()
-    store.updateId = $(event.target).parent().parent().data('id')
+    store.updateId = $(event.target).parent().parent().parent().data('id')
     $('#bike_id').val(store.updateId)
     $('#register-form').show()
     $('#register-form').on('submit', onRegisterStolen)
@@ -91,7 +91,7 @@ const onRecoverStolen = function () {
 const showRecoverStolen = function () {
   $('.recover').on('click', () => {
     clear.clearAll()
-    store.updateId = $(event.target).parent().parent().data('id')
+    store.updateId = $(event.target).parent().parent().parent().data('id')
     $('#r_bike_id').val(store.updateId)
     $('#recover-form').show()
     $('#recover-form').on('submit', onRecoverStolen)

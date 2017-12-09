@@ -87,13 +87,12 @@ p {
   background-color: transparent;
   border: none;
   display: inline-block;
-  font-weight: 700;
+  font-weight: 400;
   padding: 0;
   margin-right: 5px;
   outline: none !important;
   box-shadow: none;
     &:hover, &:focus {
-      // background-color: #C1FFC1;
       color: #118C4E;
     }
 }

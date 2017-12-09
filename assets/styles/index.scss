@@ -76,7 +76,7 @@ p {
   color: black;
   background-color: transparent;
   outline: none;
-  width: 145px;
+  min-width: 145px;
   margin: 0 auto;
   &:hover, &:focus, &:active {
     // background-color: #F0FFF0;

@@ -57,6 +57,27 @@ const onChangePassword = function (event) {
     .catch(ui.changePasswordFailure)
 }
 
+const switchSignIn = function () {
+  $('#message-top').text('')
+  $('#sign-up-email').val('')
+  $('#sign-up-password').val('')
+  $('#sign-up-password-confirm').val('')
+  $('#sign-up-wrap').hide()
+  $('#sign-in-wrap').show()
+  $('#switch-to-sign-in').off()
+  $('#switch-to-sign-up').on('click', switchSignUp)
+}
+
+const switchSignUp = function () {
+  $('#message-top').text('')
+  $('#sign-in-email').val('')
+  $('#sign-in-password').val('')
+  $('#sign-in-wrap').hide()
+  $('#sign-up-wrap').show()
+  $('#switch-to-sign-in').on('click', switchSignIn)
+  $('#switch-to-sign-up').off()
+}
+
 // click handlers
 const addHandlers = function () {
   $('#sign-up').on('submit', onSignUp)
@@ -64,7 +85,7 @@ const addHandlers = function () {
   $('#sign-out').on('click', onSignOut)
   $('#show-change-pw').on('click', showChangePassword)
   $('#change-password').on('submit', onChangePassword)
-  $('#sign-in')
+  $('#switch-to-sign-up').on('click', switchSignUp)
 }
 
 module.exports = {

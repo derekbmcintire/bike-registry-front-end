@@ -9,6 +9,7 @@ const signInUp = require('./templates/sign-in-up.handlebars')
 $(() => {
   setAPIOrigin(location, config)
   $('.sign-in-up').append(signInUp)
+  $('#sign-up-wrap').hide()
   $('#sign-in-btn').on('click', authEvents.showLoader)
   authEvents.addHandlers()
   bicycleEvents.addHandlers()

@@ -2,23 +2,23 @@
 
 <div class="bicycles" data-id="{{bicycle.id}}">
   <div class="row">
-  <div class="show-left col-xs-3">
-    <div class="bike-img-wrap">
-    <img class="bike-img" src={{bicycle.url}}>
-    </div>
+  <div class="show-left col-xs-1">
+    <div style="background-image: url({{bicycle.url}})"class="bike-img-wrap">
+    <!-- <img class="bike-img" src={{bicycle.url}}> -->
+
     {{#if bicycle.stolen}}
-      <h4 class='stolen-label'>STOLEN</h4>
+      <img class="bike-img" src="http://www.campalert.org/uploads/1/0/9/5/109538309/missing-2_orig.png">
+      <!-- <h4 class='stolen-label'>STOLEN</h4> -->
     {{/if}}
+    </div>
   </div>
-  <div class="show-center col-xs-4">
-    <p class="text-left">{{bicycle.make}}</p>
-    <p class="text-left">{{bicycle.model}}</p>
+  <div class="show-right col-xs-8">
+    <p class="text-left"><span class="attr">{{bicycle.make}}</span> {{bicycle.model}}</p>
     <p class="text-left">{{bicycle.color}}</p>
+    <p class="text-left"><span class="attr">Serial: </span>{{bicycle.serial_number}}</p>
+    <p class="text-left"><span class="attr">Size:</span> {{bicycle.size}}</p>
   </div>
-  <div class="show-right col-xs-4">
-      <p class="text-left">{{bicycle.serial_number}}</p>
-      <p class="text-left">{{bicycle.size}}</p>
-  </div>
+
 </div>
 
 <div class="row bike-btns">
@@ -32,7 +32,6 @@
           <button class="bike-btn bike-nav register-stolen">Bike was stolen</button>
         {{/if}}
         {{else}}
-        <!-- <button class="found">I found this bike</button> -->
     {{/if}}
   </div>
 </div>

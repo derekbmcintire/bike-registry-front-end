@@ -42,16 +42,19 @@ p {
   margin: 0;
 }
 
-.attribute {
+.attr {
   font-weight: 700;
 }
 
 .bicycles {
   border-top: 1px solid #118C4E;
+  margin: 0 auto;
   margin-top: 5px;
+  max-width: 700px;
   padding: 5px;
+  width: 100%;
   &:hover {
-    border-top: 3px solid #118C4E;
+    background-color: white;
   }
 }
 
@@ -62,14 +65,13 @@ p {
 .bike-img-wrap {
   background-image: url("https://cdn.shopify.com/s/files/1/0095/4332/t/30/assets/no-image.svg?9392493596437275715");
   background-position: center;
-  background-size: 50%;
+  background-size: 100%;
   background-repeat: no-repeat;
   border: 1px solid #118C4E;
   display: inline-block;
-  height: 100px;
-  line-height: 100px;
+  height: 75px;
   overflow: hidden;
-  width: 100px;
+  width: 75px;
 }
 
 .btn {
@@ -138,9 +140,10 @@ p {
 }
 
 .main {
+  text-align: center;
   margin: -10px auto;
   padding: 15px;
-  width: 80%;
+  width: 100%;
 }
 
 .menu {
@@ -165,11 +168,15 @@ p {
 .show-left {
   font-weight: 700;
   margin: 0;
-  max-height: 200px;
+  max-width: 110px;
   overflow: hidden;
   padding: 0;
   text-align: center;
   width: 150px;
+}
+
+.show-right {
+  margin-left: -15px;
 }
 
 .sign-in-up {
@@ -192,13 +199,5 @@ p {
 }
 
 @media (max-width: 991px) {
-  .main {
-    text-align: center;
-    width: 95%;
-  }
-  .bike-img-wrap {
-    width: 75px;
-    height: 75px;
-    line-height: 75px;
-  }
+
 }

@@ -72,7 +72,7 @@ const getStolenBicyclesSuccess = function (data) {
   res.remove()
   res.showRecoverStolen()
   res.showRegisterStolen()
-  if (store.data.bicycles.length < 1) {
+  if (store.data.bicycles.       length < 1) {
     $('#message').text('No stolen bikes!')
   } else {
     $('#message').text('Showing stolen bikes')

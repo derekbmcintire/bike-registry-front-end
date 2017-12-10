@@ -106,10 +106,26 @@ p {
 .bike-nav {
   display: inline-block;
 }
+
 .pw-container {
   text-align: auto;
   margin: 0 auto;
   border: 1px solid black;
+}
+
+.drop {
+  display: inline;
+}
+.drop-button {
+  background-color: transparent;
+  border: none;
+  outline: none;
+  box-shadow: none;
+  padding: 5px;
+  margin: 5px;
+  &:hover, &:focus {
+    color: #118C4E;
+  }
 }
 
 .form-control {

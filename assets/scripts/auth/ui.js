@@ -9,6 +9,7 @@ const signUpSuccess = function (data) {
   $('.loader-container').remove()
   $('#sign-message').text('You signed-up successfully!')
   clear.clearSignUp()
+  switchSignIn()
 }
 
 // display message on sign up failure
@@ -73,6 +74,28 @@ const changePasswordFailure = function (data) {
   }, 1500)
 }
 
+const switchSignIn = function () {
+  $('#message-top').text('A community based resource for getting your bike back.')
+  $('#sign-up-email').val('')
+  $('#sign-up-password').val('')
+  $('#sign-up-password-confirm').val('')
+  $('#sign-up-wrap').hide()
+  $('#sign-in-wrap').show()
+  $('#switch-to-sign-in').off()
+  $('#switch-to-sign-up').on('click', switchSignUp)
+}
+
+const switchSignUp = function () {
+  $('#message-top').text('A community based resource for getting your bike back.')
+  $('#sign-in-email').val('')
+  $('#sign-in-password').val('')
+  $('#sign-in-wrap').hide()
+  $('#sign-up-wrap').show()
+  $('#switch-to-sign-in').on('click', switchSignIn)
+  $('#switch-to-sign-up').off()
+}
+
+
 module.exports = {
   signUpSuccess,
   signUpFailure,
@@ -81,5 +104,6 @@ module.exports = {
   signOutSuccess,
   signOutFailure,
   changePasswordSuccess,
-  changePasswordFailure
+  changePasswordFailure,
+  switchSignUp
 }

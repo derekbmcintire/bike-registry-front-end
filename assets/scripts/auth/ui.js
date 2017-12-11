@@ -10,13 +10,15 @@ const signUpSuccess = function (data) {
   clear.clearSignUp()
   $('#sign-message').text('You signed-up successfully!')
   switchSignIn()
+  $('.loader-container').remove()
 }
 
 // display message on sign up failure
 const signUpFailure = function () {
   clear.clearAll()
   $('.loader-container').remove()
-  $('#sign-message').text('Error on sign-up')
+  $('#sign-message').text('Please enter a valid email address and matching passwords')
+  $('.loader-container').remove()
 }
 
 // display message on sign in success

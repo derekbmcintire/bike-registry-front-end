@@ -7,8 +7,8 @@ const bicycles = require('../bicycles/events')
 const signUpSuccess = function (data) {
   clear.clearAll()
   $('.loader-container').remove()
-  $('#sign-message').text('You signed-up successfully!')
   clear.clearSignUp()
+  $('#sign-message').text('You signed-up successfully!')
   switchSignIn()
 }
 
@@ -75,7 +75,7 @@ const changePasswordFailure = function (data) {
 }
 
 const switchSignIn = function () {
-  $('#message-top').text('A community based resource for getting your bike back.')
+  $('#subtitle').text('A community based resource for getting your bike back.')
   $('#sign-up-email').val('')
   $('#sign-up-password').val('')
   $('#sign-up-password-confirm').val('')
@@ -86,7 +86,8 @@ const switchSignIn = function () {
 }
 
 const switchSignUp = function () {
-  $('#message-top').text('A community based resource for getting your bike back.')
+  $('#subtitle').text('A community based resource for getting your bike back.')
+  $('#sign-message').text('')
   $('#sign-in-email').val('')
   $('#sign-in-password').val('')
   $('#sign-in-wrap').hide()
@@ -94,7 +95,6 @@ const switchSignUp = function () {
   $('#switch-to-sign-in').on('click', switchSignIn)
   $('#switch-to-sign-up').off()
 }
-
 
 module.exports = {
   signUpSuccess,

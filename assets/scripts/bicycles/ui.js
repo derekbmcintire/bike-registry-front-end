@@ -13,7 +13,7 @@ const createBicycleSuccess = function (data) {
 
 // display message on create bicycle failure
 const createBicycleFailure = function () {
-  $('#message').text('Error creating bike')
+  $('#message').text('Please fill out all fields')
 }
 
 // display message on get all bicycles success

@@ -78,6 +78,7 @@ const changePasswordFailure = function (data) {
 
 const switchSignIn = function () {
   $('#subtitle').text('A community based resource for getting your bike back.')
+  $('#sign-message').text('')
   $('#sign-up-email').val('')
   $('#sign-up-password').val('')
   $('#sign-up-password-confirm').val('')

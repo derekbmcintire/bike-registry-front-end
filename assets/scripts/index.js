@@ -11,6 +11,7 @@ $(() => {
   $('.sign-in-up').append(signInUp)
   $('#sign-up-wrap').hide()
   $('#sign-in-btn').on('click', authEvents.showLoader)
+  $('#sign-up-btn').on('click', authEvents.showLoader)
   authEvents.addHandlers()
   bicycleEvents.addHandlers()
   $('.main').hide()
